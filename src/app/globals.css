@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --scrollBarColor: #c9a227;
+  --background-image-gold-gradient: linear-gradient(93deg, rgba(201, 162, 39, 1) 0%, rgba(90, 60, 14, 1) 100%);
+  --background-image-dark-gradient: linear-gradient(93deg, rgba(55, 65, 81, 1) 0%, rgba(55, 65, 81, 1) 30%, rgba(17, 39, 25, 1) 60%, rgba(13, 18, 23, 1) 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-pentorCorporate);
+  --color-gray: #cccccc;
+
+    --color-gold: #c9a227;
+    --color-gold-deep: #5a3c0e;
+    --color-gold-bright: #d8b24a;
+    --color-gold-soft: #d8c489;
+    --color-gold-border: #806528;
+    --color-panel: #0d1217;
+    --color-panel-translucent: #0d1217e6;
+    --color-panel-elevated: #1b2129;
+    --glow-gold: 0 6px 18px -14px #caa53d, 0 4px 10px -14px #806528;
+    --color-success: #32c671;
+    --color-error: #e53935;
+    --animate-logo-sweep: logoSweep 1.5s linear infinite;
+    --animate-hamburger-wave: hamburger-wave 0.4s ease-out infinite alternate;
+
+}
+
+html {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "PentorCorporate", sans-serif;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+/* Scrollbar (Chrome / Safari / Edge) */
+::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 4px;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollBarColor);
+  border-radius: 10px;
+  outline: 1px solid var(--scrollBarColor);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0000004d;
+}
+
+/* Scrollbar (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollBarColor) transparent;
+}
+
+
+
+/* Button darkBlueGlow – hover glow */
+.btn-darkBlueGlow:hover {
+  background: #29324b;
+  color: #ffffff;
+  text-shadow: 0 0 5px #cfff5e, 0 0 10px #ffb25e, 0 0 20px #ef7c00;
+}
+
+.btn-elevated {
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+.ripple,
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before,
+.btn-ripple::before {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: inherit;
+  content: "";
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.ripple:hover:not(:disabled)::before,
+.btn-ripple:hover:not(:disabled)::before {
+  opacity: 0.08;
+}
+
+.ripple:focus-visible:not(:disabled)::before,
+.btn-ripple:focus-visible:not(:disabled)::before {
+  opacity: 0.12;
+}
+
+.ripple:active:not(:disabled)::before,
+.btn-ripple:active:not(:disabled)::before {
+  opacity: 0.16;
+}
+
+.ripple > *,
+.btn-ripple > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes ripple-wave {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.ripple-wave,
+.btn-ripple-wave {
+  position: absolute;
+  z-index: 0;
+  border-radius: 9999px;
+  background-color: currentColor;
+  opacity: 0.35;
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-wave 0.6s ease-out forwards;
+}
+
+.game-card-border-wrap {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 0 10px #c9a22766, 0 0 20px #c9a22726, 0 6px 20px #00000061;
+  transition: box-shadow 0.28s ease;
+}
+
+.game-card-border-wrap:hover {
+  box-shadow: 0 0 16px #c9a22794, 0 0 32px #ffecaa3d, 0 14px 32px #00000070;
+  transition: box-shadow 0.28s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.game-card-border-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  animation: none;
+  background: linear-gradient(135deg, #c9a22773, #fff8d2bf, #c9a22773);
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes logoSweep {
+  0% {
+    background-position: 100% 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    background-position: -100% 0;
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes hamburger-wave {
+  0% {
+    width: 70%;
+  }
+  40% {
+    width: 80%;
+  }
+  70% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Glow – dùng @utility để hỗ trợ hover:text-glow, group-hover:text-glow, v.v. */
+@layer utilities {
+  .animate-beat {
+    animation: beat 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .text-glow {
+    color: #cccccc;
+  }
+
+  .text-glow:hover {
+    color: #fff0c8;
+    transition: all 300ms;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ff8100,
+      0 0 15px #f00,
+      0 0 5px #ef7c00,
+      0 0 5px #ef7c00,
+      0 0 10px #f92552,
+      0 0 20px #ef7c00,
+      0 0 40px #ef7c00;
+  }
+}
