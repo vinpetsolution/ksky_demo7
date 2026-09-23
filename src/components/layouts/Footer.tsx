@@ -98,7 +98,7 @@ export default function Footer({ className }: FooterProps) {
           })}
         </nav>
         <div className="h-px w-full max-w-md bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.07)_25%,rgba(255,255,255,0.07)_75%,transparent)]" />
-        <div className={cn("flex flex-wrap items-center justify-center gap-x-6 gap-y-4")}>
+        {/* <div className={cn("flex flex-wrap items-center justify-center gap-x-6 gap-y-4")}>
           <Link
             href={"https://www.gamcare.org.uk/"}
             target="_blank"
@@ -122,7 +122,7 @@ export default function Footer({ className }: FooterProps) {
           >
             18+
           </span>
-        </div>
+        </div> */}
         <p className="text-[11px] leading-[1.55] opacity-75 max-w-140 wrap-break-word">
           게임은 중독성이 있습니다. 책임감 있게 플레이해 주세요. 이 사이트는 18세 이상의 사용자를 위한 것입니다.
         </p>
