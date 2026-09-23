@@ -40,9 +40,9 @@ const DEPOSIT_COLUMNS: Column<DepositRecord>[] = [
         align: "center",
         render: (row) => {
             const statusMap: Record<string, { text: string; className: string }> = {
-                COMPLETED: { text: "완료", className: "text-green-400" },
-                PENDING: { text: "대기중", className: "text-orange-400" },
-                CANCELLED: { text: "취소", className: "text-red-400" },
+                COMPLETED: { text: "완료", className: "text-green-700" },
+                PENDING: { text: "대기중", className: "text-gold-deep" },
+                CANCELLED: { text: "취소", className: "text-red-700" },
             };
             const statusInfo = statusMap[row.status] || { text: row.status, className: "" };
             return <span className={statusInfo.className}>{statusInfo.text}</span>;
@@ -85,19 +85,19 @@ const DepositTRC20Page = () => {
                     className="flex w-full flex-col pt-px lg:flex-row"
                     style={{ marginLeft: "-1px" }}
                 >
-                    <div className="hidden h-81.25 w-81.25 shrink-0 flex-col justify-center bg-[#11141d88] backdrop-blur-[5px] lg:flex">
-                        <span className="block pr-10 text-right text-[40px] font-extralight text-[#aaaaaa]">
+                    <div className="hidden h-81.25 w-81.25 shrink-0 flex-col justify-center bg-[#fffcf7cc] backdrop-blur-[5px] lg:flex">
+                        <span className="block pr-10 text-right text-[40px] font-extralight text-gray">
                             테더입금
                         </span>
-                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-[#aaaaaa]">
+                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-gray">
                             안내사항
                         </span>
                     </div>
                     <div
-                        className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#11141d88] px-5 py-6 backdrop-blur-[5px] lg:h-81.25 lg:px-0 lg:py-0"
+                        className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#fffcf7cc] px-5 py-6 backdrop-blur-[5px] lg:h-81.25 lg:px-0 lg:py-0"
                         style={{ marginRight: "1px" }}
                     >
-                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-[#aaaaaa] lg:pl-10 lg:text-[15px]">
+                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-gray lg:pl-10 lg:text-[15px]">
                             <p>아래 버튼을 누르면 테더(USDT) 입금 페이지로 이동합니다.</p>
                             <p>입금이 완료되면 자동으로 포인트가 충전됩니다.</p>
                             <p>최근 일주일 이내의 내역만 확인 가능합니다.</p>
@@ -107,10 +107,9 @@ const DepositTRC20Page = () => {
                 </div>
 
                 {/* Title bar */}
-                <div className="relative z-10 mb-px mt-5 flex min-h-0 flex-col bg-[#07172d] sm:flex-row sm:items-stretch md:mt-10 md:h-15.5 md:flex-row">
+                <div className="relative z-10 mb-px mt-5 flex min-h-0 flex-col bg-cream sm:flex-row sm:items-stretch md:mt-10 md:h-15.5 md:flex-row">
                     <span
                         className="ml-3 flex min-h-12 min-w-0 flex-1 items-center overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-gray md:ml-5 md:min-h-0 md:text-base"
-                        style={{ textShadow: "0 0 10px rgb(0 0 0 / 50%)" }}
                     >
                         테더(USDT) 입금
                     </span>
@@ -122,21 +121,21 @@ const DepositTRC20Page = () => {
                 {/* Balance info */}
                 <div className="grid w-full grid-cols-1 gap-px lg:grid-cols-2">
                     <div className="flex h-11 w-full md:h-12.5">
-                        <label className="mr-px w-25 shrink-0 bg-[#07172d] text-center text-xs leading-11 text-[#aaaaaa] md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="mr-px w-25 shrink-0 bg-cream text-center text-xs leading-11 text-gray md:w-37.5 md:text-[15px] md:leading-12.5">
                             보유머니
                         </label>
-                        <div className="flex flex-1 items-center bg-[#0d1d32] px-4">
-                            <span className="text-sm font-semibold text-[#ef7c00] md:text-base">
+                        <div className="flex flex-1 items-center bg-panel px-4">
+                            <span className="text-sm font-semibold text-[#a6842e] md:text-base">
                                 {formatNumber(availableBalance)} 원
                             </span>
                         </div>
                     </div>
                     <div className="flex h-11 w-full md:h-12.5">
-                        <label className="mr-px w-25 shrink-0 bg-[#07172d] text-center text-xs leading-11 text-[#aaaaaa] md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="mr-px w-25 shrink-0 bg-cream text-center text-xs leading-11 text-gray md:w-37.5 md:text-[15px] md:leading-12.5">
                             아이디
                         </label>
-                        <div className="flex flex-1 items-center bg-[#0d1d32] px-4">
-                            <span className="text-sm text-white md:text-base">
+                        <div className="flex flex-1 items-center bg-panel px-4">
+                            <span className="text-sm text-ink md:text-base">
                                 {userName || "-"}
                             </span>
                         </div>
@@ -146,7 +145,7 @@ const DepositTRC20Page = () => {
                 {/* Open Copay button */}
                 <Button
                     variant="red"
-                    className="mt-px h-20 w-full rounded-none px-6 text-base font-normal text-gray md:h-25 md:px-12.5 md:text-lg"
+                    className="mt-px h-20 w-full rounded-none px-6 text-base font-normal text-white md:h-25 md:px-12.5 md:text-lg"
                     onClick={handleOpenCopay}
                 >
                     테더(USDT) 입금하기

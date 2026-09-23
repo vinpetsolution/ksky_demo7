@@ -10,11 +10,11 @@ import { Button } from "./Button";
 const modalPanelClassName = cn(
     "relative z-[2] flex w-full min-w-[300px] max-w-[95vw] max-h-[90vh] flex-col overflow-hidden rounded-xl py-3 px-4 lg:py-4 lg:px-6",
     "border-none",
-    "bg-[#0d1217]",
+    "bg-panel",
 );
 
 const modalCloseButtonClassName = cn(
-    "absolute top-2.5 right-3.5 z-[5] text-white hover:text-white/85 flex shrink-0 items-center justify-center p-0",
+    "absolute top-2.5 right-3.5 z-[5] text-ink hover:text-gold-deep/85 flex shrink-0 items-center justify-center p-0",
     "bg-transparent",
     "transition-all duration-350 ease-out",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -96,7 +96,7 @@ const Modal: React.FC<ModalProps> = ({
                 onClick={(e) => e.stopPropagation()}
             >
                 {title ? (
-                    <h2 className="text-base lg:text-xl text-center font-bold text-white lg:mb-3.5 mb-3">{title}</h2>
+                    <h2 className="text-base lg:text-xl text-center font-bold text-ink lg:mb-3.5 mb-3">{title}</h2>
                 ) : null}
                 {showCloseButton ? (
                     <Button

@@ -209,6 +209,6 @@ export const BETHISTORY_SLIDES: CarouselSlide[] = [
     bgImage: "/images/bethistory_visual/visual_bg_sports_global.png",
     entityImage: "/images/bethistory_visual/visual_entity_sports_global.png",
     labelImage: "/images/visual_label/visual_label_1.png",
-    bgColor: "#0a1628",
+    bgColor: "#f7f4ee",
   },
 ];

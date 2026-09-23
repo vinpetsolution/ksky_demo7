@@ -52,7 +52,7 @@ function pageLinkClass(active: boolean) {
     'inline-flex h-[34px] min-h-[34px] min-w-[34px] shrink-0 items-center justify-center rounded-lg border border-gold-border bg-panel px-2 p-0! text-[13px] font-semibold shadow-none transition-[border-color,color] duration-200',
     active
       ? 'border-gold text-gold-bright hover:border-gold hover:text-gold-bright'
-      : 'text-[#757575] hover:border-gold hover:text-gold',
+      : 'text-gray hover:border-gold hover:text-gold',
   );
 }
 
@@ -103,7 +103,7 @@ const Pagination = ({
         {showEllipsisBefore && (
           <>
             {renderPageButton(1)}
-            <span className="inline-flex h-[34px] min-w-[34px] items-center justify-center text-[13px] font-semibold text-[#757575]">
+            <span className="inline-flex h-[34px] min-w-[34px] items-center justify-center text-[13px] font-semibold text-gray">
               ...
             </span>
           </>
@@ -111,7 +111,7 @@ const Pagination = ({
         {pages.map((page) => renderPageButton(page))}
         {showEllipsisAfter && (
           <>
-            <span className="inline-flex h-[34px] min-w-[34px] items-center justify-center text-[13px] font-semibold text-[#757575]">
+            <span className="inline-flex h-[34px] min-w-[34px] items-center justify-center text-[13px] font-semibold text-gray">
               ...
             </span>
             {renderPageButton(lastPage)}

@@ -26,10 +26,10 @@ function tabButtonClass(active: boolean) {
   return cn(
     "relative h-9 min-w-[120px] shrink-0 gap-2 rounded px-4 py-1.5 text-sm font-medium tracking-wide",
     active
-      ? "border border-gold bg-gold text-[#000000de] hover:bg-gold hover:text-[#000000de]"
+      ? "border border-gold bg-gold text-ink hover:bg-gold hover:text-ink"
       : cn(
         "btn-elevated border border-gold bg-transparent text-gold",
-        "shadow-[0_3px_1px_-2px_#0003,0_2px_2px_#00000024,0_1px_5px_#0000001f]",
+        "shadow-[0_3px_1px_-2px_#5a461e14,0_2px_2px_#5a461e1a,0_1px_5px_#5a461e14]",
         "hover:bg-transparent hover:text-gold",
       ),
   );
@@ -69,7 +69,7 @@ export function FavoritesRecentPlayModal({
                   <Icon
                     className={cn(
                       "size-5 shrink-0",
-                      active ? "text-[#000000de]" : "text-gold",
+                      active ? "text-ink" : "text-gold",
                     )}
                     aria-hidden
                   />
@@ -83,7 +83,7 @@ export function FavoritesRecentPlayModal({
         </div>
 
         <div className="flex min-h-[180px] flex-1 items-center justify-center">
-          <p className="text-center text-sm text-white/90">
+          <p className="text-center text-sm text-ink">
             {EMPTY_MESSAGES[tab]}
           </p>
         </div>

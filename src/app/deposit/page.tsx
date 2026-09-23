@@ -49,9 +49,9 @@ const DEPOSIT_COLUMNS: Column<DepositRecord>[] = [
         align: "center",
         render: (row) => {
             const statusMap: Record<string, { text: string; className: string }> = {
-                COMPLETED: { text: "완료", className: "text-green-400" },
-                PENDING: { text: "대기중", className: "text-orange-400" },
-                CANCELLED: { text: "취소", className: "text-red-400" },
+                COMPLETED: { text: "완료", className: "text-green-700" },
+                PENDING: { text: "대기중", className: "text-gold-deep" },
+                CANCELLED: { text: "취소", className: "text-red-700" },
             };
             const statusInfo = statusMap[row.status] || { text: row.status, className: "" };
             return <span className={statusInfo.className}>{statusInfo.text}</span>;
@@ -135,19 +135,19 @@ const DepositPage = () => {
                     className="flex flex-col w-full pt-px lg:flex-row"
                     style={{ marginLeft: "-1px" }}
                 >
-                    <div className="hidden lg:flex h-81.25 w-81.25 shrink-0 flex-col justify-center bg-[#11141d88] backdrop-blur-[5px]">
-                        <span className="block pr-10 text-right text-[40px] font-extralight text-[#aaaaaa]">
+                    <div className="hidden lg:flex h-81.25 w-81.25 shrink-0 flex-col justify-center bg-[#fffcf7cc] backdrop-blur-[5px]">
+                        <span className="block pr-10 text-right text-[40px] font-extralight text-gray">
                             입금
                         </span>
-                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-[#aaaaaa]">
+                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-gray">
                             안내사항
                         </span>
                     </div>
                     <div
-                        className="flex min-h-30 py-6 px-5 min-w-0 flex-1 flex-col justify-center bg-[#11141d88] backdrop-blur-[5px] lg:h-81.25 lg:py-0 lg:px-0"
+                        className="flex min-h-30 py-6 px-5 min-w-0 flex-1 flex-col justify-center bg-[#fffcf7cc] backdrop-blur-[5px] lg:h-81.25 lg:py-0 lg:px-0"
                         style={{ marginRight: "1px" }}
                     >
-                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-[#aaaaaa] lg:pl-10 lg:text-[15px]">
+                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-gray lg:pl-10 lg:text-[15px]">
                             <p>최근 일주일 이내의 내역만 확인 가능합니다.</p>
                             <p>입금 시 받는 분에 입력되는 이름과 입금자명이 동일해야 정상 충전 처리 가능합니다.</p>
                             <p>충전은 신청즉시 보유머니에서 차감됩니다.</p>
@@ -156,10 +156,9 @@ const DepositPage = () => {
                 </div>
 
                 {/* Title bar */}
-                <div className="relative z-10 mb-px flex h-12 shrink-0 items-center bg-[#07172d] md:h-15.5">
+                <div className="relative z-10 mb-px flex h-12 shrink-0 items-center bg-cream md:h-15.5">
                     <span
                         className="ml-3 block min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold leading-12 text-gray md:ml-5 md:text-base md:leading-15.5"
-                        style={{ textShadow: "0 0 10px rgb(0 0 0 / 50%)" }}
                     >
                         입금신청
                     </span>
@@ -168,40 +167,40 @@ const DepositPage = () => {
                 {/* User info grid */}
                 <div className="grid gap-px w-full grid-cols-1 lg:grid-cols-2">
                     <div className="flex w-full h-11 md:h-12.5">
-                        <label className="w-25 text-xs bg-[#07172d] mr-px text-[#aaaaaa] leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="w-25 text-xs bg-cream mr-px text-gray leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
                             보유머니
                         </label>
-                        <div className="bg-[#0d1d32] relative flex-1 flex items-center px-2.5">
-                            <span className="text-[#ef7c00]">{formatNumber(availableBalance)} 원</span>
+                        <div className="bg-panel relative flex-1 flex items-center px-2.5">
+                            <span className="text-[#a6842e]">{formatNumber(availableBalance)} 원</span>
                         </div>
                     </div>
                     <div className="flex w-full h-11 md:h-12.5">
-                        <label className="w-25 text-xs bg-[#07172d] mr-px text-[#aaaaaa] leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="w-25 text-xs bg-cream mr-px text-gray leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
                             입금자명
                         </label>
-                        <div className="bg-[#0d1d32] relative flex-1 flex items-center px-2.5">
-                            <span className="text-[#ef7c00]">{displayDepositorName}</span>
+                        <div className="bg-panel relative flex-1 flex items-center px-2.5">
+                            <span className="text-[#a6842e]">{displayDepositorName}</span>
                         </div>
                     </div>
                     <div className="flex w-full h-11 md:h-12.5">
-                        <label className="w-25 text-xs bg-[#07172d] mr-px text-[#aaaaaa] leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="w-25 text-xs bg-cream mr-px text-gray leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
                             입금은행
                         </label>
-                        <div className="bg-[#0d1d32] relative flex-1 flex items-center px-2.5">
-                            <span className="text-[#ef7c00]">{displayBankName}</span>
+                        <div className="bg-panel relative flex-1 flex items-center px-2.5">
+                            <span className="text-[#a6842e]">{displayBankName}</span>
                         </div>
                     </div>
                     <div className="flex w-full h-11 md:h-12.5">
-                        <label className="w-25 text-xs bg-[#07172d] mr-px text-[#aaaaaa] leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
+                        <label className="w-25 text-xs bg-cream mr-px text-gray leading-11 text-center shrink-0 md:w-37.5 md:text-[15px] md:leading-12.5">
                             입금계좌
                         </label>
-                        <div className="bg-[#0d1d32] relative flex-1 flex items-center px-2.5">
-                            <span className="text-[#ef7c00] font-mono">{displayBankAccount}</span>
+                        <div className="bg-panel relative flex-1 flex items-center px-2.5">
+                            <span className="text-[#a6842e] font-mono">{displayBankAccount}</span>
                         </div>
                         <Button
                             variant="red"
                             onClick={handleCopyAccount}
-                            className="h-11 rounded-none text-gray text-sm px-4 md:h-12.5 md:px-12.5 md:text-base"
+                            className="h-11 rounded-none text-white text-sm px-4 md:h-12.5 md:px-12.5 md:text-base"
                         >
                             계좌복사
                         </Button>
@@ -211,15 +210,15 @@ const DepositPage = () => {
                 {/* Maintenance Warning */}
                 {isMaintenanceTime && (
                     <div className="bg-red-900/50 border border-red-500 p-4 mt-px">
-                        <p className="text-red-400 text-center font-semibold">
+                        <p className="text-red-700 text-center font-semibold">
                             입금 점검 시간입니다
                         </p>
                     </div>
                 )}
 
                 {/* Money Box */}
-                <div className="min-h-20 bg-[#07172d] mt-px p-2 md:min-h-25 md:p-5">
-                    <div className="h-full border border-[#29324b] px-2 py-2 flex items-center justify-between md:px-5 md:py-4">
+                <div className="min-h-20 bg-cream mt-px p-2 md:min-h-25 md:p-5">
+                    <div className="h-full border border-line px-2 py-2 flex items-center justify-between md:px-5 md:py-4">
                         <span className="text-sm font-bold text-gray shrink-0 md:text-[26px]">입금금액</span>
                         <div className="flex min-w-0 items-center flex-1 pl-2 md:pl-10">
                             <input
@@ -238,7 +237,7 @@ const DepositPage = () => {
                                 placeholder={minAmount > 0 || maxAmount > 0
                                     ? `${minAmount > 0 ? formatNumber(minAmount) + '원' : ''} ~ ${maxAmount > 0 ? formatNumber(maxAmount) + '원' : ''}`
                                     : '금액을 입력하세요'}
-                                className="flex-1 min-w-0 bg-transparent text-right text-xl text-[#ff9d00] font-rajdhani outline-none placeholder:text-gray placeholder:text-xs md:text-12.5 md:placeholder:text-xl"
+                                className="flex-1 min-w-0 bg-transparent text-right text-xl text-[#a6842e] font-rajdhani outline-none placeholder:text-gray placeholder:text-xs md:text-12.5 md:placeholder:text-xl"
                             />
                             <span className="shrink-0 pl-1 text-lg font-normal text-gray md:pl-4 md:text-4xl">원</span>
                         </div>
@@ -254,28 +253,28 @@ const DepositPage = () => {
                             variant="transparent"
                             onClick={() => handlePresetClick(value)}
                             disabled={loading || isMaintenanceTime || (maxAmount > 0 && (amount + value) > maxAmount)}
-                            className={`bg-[#07172d] hover:text-[#ef7c00]/80 rounded-none py-2 text-center h-11 text-xs font-semibold text-[#ef7c00] hover:bg-[#111d30] md:py-3 md:h-12.5 md:text-[15px] md:col-span-1 disabled:opacity-50 ${i < 4 ? "col-span-3" : "col-span-4"}`}
+                            className={`bg-cream hover:text-[#a6842e]/80 rounded-none py-2 text-center h-11 text-xs font-semibold text-[#a6842e] hover:bg-[#f8f1e4] md:py-3 md:h-12.5 md:text-[15px] md:col-span-1 disabled:opacity-50 ${i < 4 ? "col-span-3" : "col-span-4"}`}
                         >
                             {label}
                         </Button>
                     ))}
                 </div>
-                <div className="w-full h-11 bg-[#07172d] md:h-12.5">
+                <div className="w-full h-11 bg-cream md:h-12.5">
                     <Button
                         variant="transparent"
                         onClick={handleReset}
                         disabled={loading || isMaintenanceTime}
-                        className="w-full h-full font-medium rounded-none text-[15px] bg-[#29324b] text-[#ef7c00] hover:text-[#ef7c00]/80 hover:bg-[#333d54]"
+                        className="w-full h-full font-medium rounded-none text-[15px] bg-line text-[#a6842e] hover:text-[#a6842e]/80 hover:bg-gold-border"
                     >
                         정정하기
                     </Button>
                 </div>
-                <div className="mt-px grid w-full grid-cols-2 gap-px bg-[#031124]">
+                <div className="mt-px grid w-full grid-cols-2 gap-px bg-line">
                     <Button
                         variant="red"
                         onClick={handleSubmit}
                         disabled={loading || isMaintenanceTime}
-                        className="min-h-18 rounded-none px-1 text-xs font-normal text-gray md:min-h-25 md:px-3 md:text-base lg:text-lg lg:px-6 disabled:opacity-50"
+                        className="min-h-18 rounded-none px-1 text-xs font-normal text-white md:min-h-25 md:px-3 md:text-base lg:text-lg lg:px-6 disabled:opacity-50"
                     >
                         {loading ? "처리중..." : isMaintenanceTime ? "점검중" : "입금하기"}
                     </Button>

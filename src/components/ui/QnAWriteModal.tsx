@@ -13,8 +13,8 @@ interface QnAWriteModalProps {
 }
 
 const inputBase = cn(
-  "rounded-xl text-sm placeholder:text-sm border border-[#30363d] bg-[#0d1117] px-4 py-3",
-  "text-white placeholder:text-white/40",
+  "rounded-xl text-sm placeholder:text-sm border border-line bg-panel px-4 py-3",
+  "text-ink placeholder:text-[#A89884]",
   "focus:outline-none"
 );
 
@@ -75,11 +75,11 @@ export function QnAWriteModal({ isOpen, onClose, onCreated }: QnAWriteModalProps
       aria-labelledby="qna-write-modal-title"
     >
       <div
-        className="relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden bg-[#313742] shadow-2xl border border-[#313742]"
+        className="relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden bg-line shadow-2xl border border-line"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative flex shrink-0 items-center justify-center h-13.5">
-          <h2 id="qna-write-modal-title" className="text-lg font-bold text-white">
+          <h2 id="qna-write-modal-title" className="text-lg font-bold text-ink">
             글쓰기
           </h2>
           <Button
@@ -95,7 +95,7 @@ export function QnAWriteModal({ isOpen, onClose, onCreated }: QnAWriteModalProps
 
         <form
           onSubmit={handleSubmit}
-          className="flex min-h-0 bg-[#11141d] flex-1 flex-col overflow-hidden"
+          className="flex min-h-0 bg-panel flex-1 flex-col overflow-hidden"
         >
           <div className="scrollbar-thin flex-1 overflow-y-auto">
             <div className="space-y-4 p-6">
@@ -110,7 +110,7 @@ export function QnAWriteModal({ isOpen, onClose, onCreated }: QnAWriteModalProps
                   className={cn(inputBase, "w-full h-10")}
                   disabled={loading}
                 />
-                <p className="mt-1 text-right text-xs text-white/40">{title.length}/200</p>
+                <p className="mt-1 text-right text-xs text-[#A89884]">{title.length}/200</p>
               </div>
 
               <div className="flex flex-col">
@@ -124,12 +124,12 @@ export function QnAWriteModal({ isOpen, onClose, onCreated }: QnAWriteModalProps
                   className={cn(inputBase, "w-full resize-none")}
                   disabled={loading}
                 />
-                <p className="mt-1 text-right text-xs text-white/40">{message.length}/1000</p>
+                <p className="mt-1 text-right text-xs text-[#A89884]">{message.length}/1000</p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-[#313742]">
+          <div className="border-t border-line">
             <Button
               type="submit"
               variant="darkBlueGlow"

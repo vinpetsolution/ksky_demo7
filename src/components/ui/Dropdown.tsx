@@ -71,21 +71,21 @@ export function Dropdown({
         type="button"
         onClick={() => setIsOpen((o) => !o)}
         className={cn(
-          "flex h-10 w-full items-center justify-between gap-2 rounded-lg border border-white bg-black px-3",
-          "text-left text-sm text-white",
-          "focus:outline-none focus:border-white",
+          "flex h-10 w-full items-center justify-between gap-2 rounded-lg border border-line bg-white px-3",
+          "text-left text-sm text-ink",
+          "focus:outline-none focus:border-line",
           buttonClassName,
         )}
         rightIcon={
           <IoChevronDown
             className={cn(
-              "size-5 shrink-0 text-white/70 transition-transform duration-200",
+              "size-5 shrink-0 text-ink/70 transition-transform duration-200",
               isOpen && "rotate-180",
             )}
           />
         }
       >
-        <span className={selectedOption ? "text-white" : "text-white/40"}>
+        <span className={selectedOption ? "text-ink" : "text-[#A89884]"}>
           {selectedOption?.label ?? placeholder}
         </span>
       </Button>
@@ -94,7 +94,7 @@ export function Dropdown({
         <div
           ref={menuRef}
           className={cn(
-            "absolute right-0 left-0 z-50 max-h-48 overflow-y-auto rounded-lg border border-white bg-black shadow-lg",
+            "absolute right-0 left-0 z-50 max-h-48 overflow-y-auto rounded-lg border border-line bg-white shadow-lg",
             "scrollbar-thin",
             displayPosition === "bottom" ? "top-full mt-1" : "bottom-full mb-1",
           )}
@@ -109,12 +109,12 @@ export function Dropdown({
                 setIsOpen(false);
               }}
               className={cn(
-                "flex w-full items-center justify-start rounded-none px-3 py-2.5 text-left text-sm text-white transition-colors",
+                "flex w-full items-center justify-start rounded-none px-3 py-2.5 text-left text-sm text-ink transition-colors",
                 index === 0 && "rounded-t-lg",
                 index === options.length - 1 && "rounded-b-lg",
                 opt.value === value
-                  ? "bg-white/15 text-white hover:text-white/80"
-                  : "hover:bg-white/10 hover:text-white",
+                  ? "bg-cream text-ink hover:text-gold-deep"
+                  : "hover:bg-[#F8F1E4] hover:text-gold-deep",
               )}
             >
               {opt.label}

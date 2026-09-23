@@ -61,21 +61,21 @@ function LoggedInView() {
         href="/messages"
         className={cn(
           "flex items-center gap-1 text-sm transition-all duration-300",
-          "text-[#d4af37] hover:text-[#f7e8a8]",
+          "text-gold hover:text-gold-deep",
         )}
         title="쪽지함"
       >
-        <MailboxIcon className="size-[18px] shrink-0 text-[#e6c34d]" />
+        <MailboxIcon className="size-[18px] shrink-0 text-gold" />
         <span className="whitespace-nowrap font-semibold tracking-tight max-md:hidden">
           쪽지함
         </span>
-        <span className="text-white/70">:</span>
+        <span className="text-ink/70">:</span>
         <span
           className={cn(
             "min-w-[1ch] tabular-nums font-bold",
             totalUnread > 0
               ? "text-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.55)]"
-              : "text-[#9ca3af]",
+              : "text-gray",
           )}
         >
           {totalUnread > 99 ? "99+" : totalUnread}
@@ -90,7 +90,7 @@ function LoggedInView() {
       <div className="flex gap-2 items-center">
         <span className="text-gray">
           머니{" "}
-          <strong className="text-[#47fd0e] font-bold">
+          <strong className="text-[#1f8a45] font-bold">
             {money.toLocaleString()}원
           </strong>
         </span>
@@ -104,7 +104,7 @@ function LoggedInView() {
 
       {/* <span className="text-gray">
         포인트{" "}
-        <strong className="text-[#47fd0e] font-bold">
+        <strong className="text-[#1f8a45] font-bold">
           {points.toLocaleString()}P
         </strong>
       </span>

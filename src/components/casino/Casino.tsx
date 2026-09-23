@@ -41,7 +41,7 @@ export default function Casino() {
         return (
           <div
             key={vendorName}
-            className="group relative cursor-pointer overflow-hidden border border-[#29324b] bg-linear-to-r from-[#0a0f1a] to-[#141c2e] transition-all duration-200 hover:border-[#ef7c00] hover:shadow-[0_0_12px_rgba(239,124,0,0.15)]"
+            className="group relative cursor-pointer overflow-hidden border border-[#D7B15A] bg-[linear-gradient(135deg,#AE947C,#C8B29C,#E9DDD1,#F5EEE7)] text-ink shadow-[0_8px_20px_rgba(174,148,124,0.22)] transition-all duration-200 hover:shadow-[0_10px_24px_rgba(174,148,124,0.32)]"
             onClick={handleVendorClick}
           >
             <div className="relative h-25 md:h-30">

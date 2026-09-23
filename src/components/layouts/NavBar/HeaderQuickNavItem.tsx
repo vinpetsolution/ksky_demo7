@@ -25,21 +25,21 @@ export function HeaderQuickNavItem({ item }: Props) {
       className={cn(
         "group ripple relative z-5 flex h-20 w-14 xl:min-w-24 flex-col items-center justify-center gap-2",
         "overflow-hidden rounded-b-[14px] border-t-0",
-        "bg-linear-to-b from-[#181d25] to-panel px-4 pt-3 pb-3.5 text-sm font-semibold text-white",
-        "shadow-[0_6px_16px_-10px_#000000b3]",
+        "bg-linear-to-b from-panel-elevated to-panel px-4 pt-3 pb-3.5 text-sm font-semibold text-ink",
+        "shadow-[0_6px_16px_-10px_rgba(90,70,30,0.12)]",
         "transition-[transform,background,box-shadow,border-color] duration-250 ease-in-out",
         // underline ::after
         "after:pointer-events-none after:absolute after:bottom-[7px] after:left-1/2 after:z-1",
         "after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-sm after:bg-gold",
         "after:transition-[width] after:duration-250 after:content-['']",
         // hover
-        "hover:bg-[linear-gradient(180deg,#c9a2272e,#c9a22708)]",
-        "hover:shadow-[0_12px_24px_-14px_#c9a22780]",
+        "hover:bg-[linear-gradient(180deg,#c6a15b2e,#c6a15b08)]",
+        "hover:shadow-[0_12px_24px_-14px_#c6a15b80]",
         "hover:after:w-11",
         // active (route khớp)
         "data-active:-translate-y-0.5 data-active:border-gold-border",
-        "data-active:bg-[linear-gradient(180deg,#c9a2272e,#c9a22708)]",
-        "data-active:shadow-[0_12px_24px_-14px_#c9a22780]",
+        "data-active:bg-[linear-gradient(180deg,#c6a15b2e,#c6a15b08)]",
+        "data-active:shadow-[0_12px_24px_-14px_#c6a15b80]",
         "data-active:after:w-11",
       )}
     >

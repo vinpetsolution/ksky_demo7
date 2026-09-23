@@ -67,7 +67,7 @@ export default function HeroCarousel({
   const activeHref = videos[active]?.href;
 
   return (
-    <section className="relative aspect-21/9 xl:h-[57vh] w-full overflow-hidden bg-black">
+    <section className="relative aspect-21/9 xl:h-[57vh] w-full overflow-hidden bg-white">
       {videos.map((item, i) => (
         <video
           key={item.src}

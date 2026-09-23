@@ -81,8 +81,8 @@ const AnnouncementPage = () => {
                             title="공지사항"
                             columns={ANNOUNCEMENT_COLUMNS}
                             data={data}
-                            trClassName="bg-[#0d1d32]"
-                            cellClassName="border-r border-[#070a0f] border-b"
+                            trClassName="bg-panel"
+                            cellClassName="border-r border-line border-b"
                             onRowClick={openNoticeDetail}
                         />
                     </div>
@@ -105,10 +105,10 @@ const AnnouncementPage = () => {
                             onClick={() => setDetailNotice(null)}
                         >
                             <div
-                                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-[#29324b] bg-[#07172d] shadow-2xl"
+                                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-line bg-cream shadow-2xl"
                                 onClick={(e) => e.stopPropagation()}
                             >
-                                <div className="flex items-start justify-between gap-2 border-b border-[#070a0f] px-4 py-3">
+                                <div className="flex items-start justify-between gap-2 border-b border-line px-4 py-3">
                                     <div className="min-w-0">
                                         <h3
                                             id="announcement-detail-title"
@@ -122,7 +122,7 @@ const AnnouncementPage = () => {
                                     </div>
                                     <button
                                         type="button"
-                                        className="shrink-0 text-2xl leading-none text-[#ef7c00]/90 hover:text-[#ef7c00]"
+                                        className="shrink-0 text-2xl leading-none text-[#a6842e]/90 hover:text-[#a6842e]"
                                         aria-label="닫기"
                                         onClick={() => setDetailNotice(null)}
                                     >
@@ -134,7 +134,7 @@ const AnnouncementPage = () => {
                                         {detailNotice.message || "내용이 없습니다."}
                                     </div>
                                 </div>
-                                <div className="border-t border-[#070a0f] p-3">
+                                <div className="border-t border-line p-3">
                                     <Button
                                         type="button"
                                         variant="red"

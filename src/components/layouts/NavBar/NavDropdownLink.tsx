@@ -10,7 +10,7 @@ interface NavDropdownLinkProps {
 }
 
 const DROPDOWN_LINK_CLASS = cn(
-  'nav-link block py-3 px-4 hover:bg-[#29324b] whitespace-nowrap'
+  'nav-link block py-3 px-4 hover:bg-line whitespace-nowrap'
 );
 
 export const NavDropdownLink = ({ child, pathname }: NavDropdownLinkProps) => (

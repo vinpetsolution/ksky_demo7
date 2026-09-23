@@ -41,8 +41,8 @@ export function MobileFooterNav() {
       className={cn(
         "fixed right-0 bottom-0 left-0 z-55 w-full min-h-[62px]",
         "items-stretch justify-between bg-panel px-1.5 py-1.5",
-        "rounded-t-xl border-t border-white/8",
-        "shadow-[0_-6px_24px_#00000073]",
+        "rounded-t-xl border-t border-line",
+        "shadow-[0_-6px_24px_rgba(90,70,30,0.12)]",
         "hidden max-lg:flex",
       )}
       aria-label="Mobile footer navigation"
@@ -57,7 +57,7 @@ export function MobileFooterNav() {
             className={cn(
               "flex min-w-0 flex-1 cursor-pointer items-center justify-center rounded-lg px-0.5 py-1 no-underline",
               "transition-colors duration-200",
-              active && "bg-white/4",
+              active && "bg-[#F8F1E4]",
             )}
           >
             <span className="mx-auto flex min-w-0 flex-col items-center justify-center gap-[3px]">
@@ -74,7 +74,7 @@ export function MobileFooterNav() {
               <span
                 className={cn(
                   "m-0 max-w-[72px] truncate text-center text-[10px] font-semibold leading-tight",
-                  active ? "text-white" : "text-[#757575]",
+                  active ? "text-ink" : "text-gray",
                 )}
               >
                 {item.label}

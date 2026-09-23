@@ -144,7 +144,7 @@ export function PopupBanners({
                   "h-2 rounded-full transition-all duration-200",
                   i === activeSlide
                     ? "w-8 bg-white"
-                    : "w-2 bg-white/35 hover:bg-white/55",
+                    : "w-2 bg-white/35 hover:bg-white/70",
                 )}
               />
             ))}

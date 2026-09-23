@@ -36,7 +36,7 @@ export function CasinoCard({
       <div
         className={cn(
           "relative aspect-400/170 w-full overflow-hidden border transition-colors duration-200",
-          "border-[#4d5a8b] hover:border-[#ef7c00]",
+          "border-gold-border hover:border-[#a6842e]",
           className
         )}
       >

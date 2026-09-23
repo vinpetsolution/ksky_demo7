@@ -51,9 +51,9 @@ interface FormErrors {
 }
 
 const inputBase = cn(
-  "h-10 rounded-lg border border-white bg-black px-3",
-  "text-white placeholder:text-white/40",
-  "focus:outline-none focus:border-white",
+  "h-10 rounded-lg border border-line bg-white px-3",
+  "text-ink placeholder:text-[#A89884]",
+  "focus:outline-none focus:border-line",
   "disabled:cursor-not-allowed disabled:opacity-50",
 );
 
@@ -231,7 +231,7 @@ export function RegistrationModal({
       {step === "select" ? (
         <div className="flex flex-col items-center px-2">
 
-          <p className="mb-6 text-sm text-[#ffffffb8]">
+          <p className="mb-6 text-sm text-gray">
             원하시는 가입 방법을 선택해 주세요
           </p>
 
@@ -240,21 +240,21 @@ export function RegistrationModal({
             onClick={() => setStep("form")}
             className={cn(
               "flex w-full cursor-pointer items-center gap-4 rounded-lg border px-4.5 py-4",
-              "border-[#d4af3766] bg-[#d4af370f] text-left transition-all",
-              "hover:border-gold hover:bg-[#ffffff0a]",
+              "border-[#c6a15b66] bg-[#c6a15b0f] text-left transition-all",
+              "hover:border-gold hover:bg-[#c6a15b14]",
             )}
           >
-            <span className="flex size-10.5 shrink-0 items-center justify-center rounded-full bg-[#ffffff14]">
+            <span className="flex size-10.5 shrink-0 items-center justify-center rounded-full bg-[#c6a15b1f]">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18v-2H3v2zM5 9v10h2V9H5zm4 0v10h2V9H9zm4 0v10h2V9h-2zm4 0v10h2V9h-2zM2 6h20V4H2v2zm2-4h16v2H4V2z" fill="white"></path><path d="M12 1L2 6h20L12 1z" fill="white" opacity="0.85"></path></svg>            </span>
             <span className="min-w-0">
-              <span className="block text-[15px] font-bold text-white">국내 계좌 가입</span>
-              <span className="mt-0.5 block text-xs text-white/60">
+              <span className="block text-[15px] font-bold text-ink">국내 계좌 가입</span>
+              <span className="mt-0.5 block text-xs text-ink/60">
                 본인 명의의 국내 은행 계좌로 가입
               </span>
             </span>
           </button>
 
-          <p className="mt-3 text-center text-base text-white">
+          <p className="mt-3 text-center text-base text-ink">
             이미 회원이신가요?{" "}
             <button
               type="button"
@@ -342,7 +342,7 @@ export function RegistrationModal({
                   "absolute top-1/2 right-3 -translate-y-1/2 transition-colors",
                   errors.password
                     ? "text-error hover:text-error/80"
-                    : "text-white/70 hover:text-white",
+                    : "text-ink/70 hover:text-gold-deep",
                 )}
                 tabIndex={-1}
               >
@@ -384,7 +384,7 @@ export function RegistrationModal({
                   "absolute top-1/2 right-3 -translate-y-1/2 transition-colors",
                   errors.confirmPassword
                     ? "text-error hover:text-error/80"
-                    : "text-white/70 hover:text-white",
+                    : "text-ink/70 hover:text-gold-deep",
                 )}
                 tabIndex={-1}
               >
@@ -521,7 +521,7 @@ export function RegistrationModal({
                   "absolute top-1/2 right-3 -translate-y-1/2 transition-colors",
                   errors.transactionPassword
                     ? "text-error hover:text-error/80"
-                    : "text-white/70 hover:text-white",
+                    : "text-ink/70 hover:text-gold-deep",
                 )}
                 tabIndex={-1}
               >

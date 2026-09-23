@@ -14,10 +14,10 @@ function hash(str: string): number {
 }
 
 const CARD_BG = [
-  "from-[#0a0f1a] to-[#1a2035]",
-  "from-[#11141d] to-[#1d2f4b]",
-  "from-[#0d1217] to-[#29324b]",
-  "from-[#07172d] to-[#0d1d32]",
+  "from-background to-[#f8f1e4]",
+  "from-panel to-[#f8f1e4]",
+  "from-panel to-line",
+  "from-cream to-panel",
 ];
 
 export interface GameSlotCardProps {
@@ -42,9 +42,9 @@ export function GameSlotCard({
   const content = (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden bg-[#0d1117]",
-        "border border-[#4d5a8b] transition-colors duration-200",
-        href && "hover:border-[#ef7c00]",
+        "group relative flex flex-col overflow-hidden bg-panel",
+        "border border-gold-border transition-colors duration-200",
+        href && "hover:border-[#a6842e]",
         className
       )}
     >
@@ -90,7 +90,7 @@ export function GameSlotCard({
         )}
       </div>
 
-      <div className="game-slot-card-footer relative flex min-h-10 shrink-0 items-center border-t border-[#1d2f4b] px-[4%] py-2">
+      <div className="game-slot-card-footer relative flex min-h-10 shrink-0 items-center border-t border-[#f8f1e4] px-[4%] py-2">
         <span className="game-slot-card-title text-[clamp(0.75rem,2.5vw,1rem)] font-semibold">
           {title}
         </span>

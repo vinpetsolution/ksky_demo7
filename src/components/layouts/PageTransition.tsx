@@ -60,7 +60,7 @@ function PageLoaderTransition({ children }: { children: React.ReactNode }) {
           <motion.div
             key="page-loader"
             className={cn(
-              "fixed z-30 flex w-full flex-col items-center justify-center bg-black",
+              "fixed z-30 flex w-full flex-col items-center justify-center bg-white",
               "max-lg:inset-x-0 max-lg:top-38.5 max-lg:bottom-17.5",
               "lg:top-20 lg:right-0 lg:bottom-0 lg:left-60",
             )}
@@ -68,7 +68,7 @@ function PageLoaderTransition({ children }: { children: React.ReactNode }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
           >
-            <p className="relative text-[32px] font-black italic tracking-[2px] text-[#4a0d0d]">
+            <p className="relative text-[32px] font-black italic tracking-[2px] text-gold-deep">
               {LOADER_LABEL}
               <span
                 aria-hidden

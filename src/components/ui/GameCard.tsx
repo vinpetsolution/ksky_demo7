@@ -43,7 +43,7 @@ function GameCardMedia({
   name?: string;
 }) {
   if (kind === "none" || !src) {
-    return <div className="h-full w-full bg-[#0d1117]" aria-hidden />;
+    return <div className="h-full w-full bg-panel" aria-hidden />;
   }
 
   if (kind === "video") {
@@ -110,11 +110,11 @@ export function GameCard({
       type="button"
       className={cn(
         "max-w-[90%] truncate rounded-full",
-        "h-8 min-w-23 text-[#1c1c1c] px-4 font-bold text-[13px]",
+        "h-8 min-w-23 text-ink px-4 font-bold text-[13px]",
         "translate-y-0 border border-[rgba(255,236,170,0.42)]!",
-        "shadow-[0_0_16px_#c9a22794]!",
+        "shadow-[0_0_16px_#c6a15b94]!",
         "transition-all duration-300 hover:scale-[1.05]",
-        "hover:shadow-[0_0_20px_#c9a227ad]!",
+        "hover:shadow-[0_0_20px_#c6a15bad]!",
       )}
       onClick={href ? undefined : onClick}
     >
@@ -129,7 +129,7 @@ export function GameCard({
         className,
       )}
     >
-      <div className="relative z-9 h-full w-full overflow-hidden rounded-lg bg-[#0d1117]">
+      <div className="relative z-9 h-full w-full overflow-hidden rounded-lg bg-panel">
         <div className="absolute inset-0 transition-opacity duration-350 ease-[cubic-bezier(0.35,0.95,0.4,1)] overflow-hidden">
           <GameCardMedia kind={media.kind} src={media.src} name={name} />
         </div>

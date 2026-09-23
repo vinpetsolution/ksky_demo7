@@ -45,9 +45,9 @@ const VoucherPage = () => {
             <div className="px-5 pb-10 flex flex-col w-full">
                 {/* Header */}
                 <div className="flex w-full pt-px">
-                    <div className="flex h-[200px] w-full shrink-0 items-center bg-[#11141d88] backdrop-blur-[5px]">
+                    <div className="flex h-[200px] w-full shrink-0 items-center bg-[#fffcf7cc] backdrop-blur-[5px]">
                         <span
-                            className="block pl-20 text-right text-[40px] font-meidum text-[#aaaaaa]"
+                            className="block pl-20 text-right text-[40px] font-meidum text-gray"
                         >
                             쿠폰
                         </span>
@@ -56,7 +56,7 @@ const VoucherPage = () => {
 
                 {/* Title bar: 입금신청 */}
                 <div
-                    className="relative z-10 mb-px flex h-[62px] shrink-0 items-center bg-[#07172d]"
+                    className="relative z-10 mb-px flex h-[62px] shrink-0 items-center bg-cream"
                     style={{
                         backgroundImage: "url('/images/title_effect_overlay.png')",
                         backgroundPosition: "left",
@@ -68,7 +68,6 @@ const VoucherPage = () => {
                         style={{
                             lineHeight: "62px",
                             marginLeft: "20px",
-                            textShadow: "0 0 10px rgb(0 0 0 / 50%)",
                         }}
                     >
                         쿠폰
@@ -76,23 +75,23 @@ const VoucherPage = () => {
                 </div>
 
                 <div className="flex w-full h-[50px]">
-                    <label className="w-[150px] text-[15px] bg-[#07172d] mr-px text-[#aaaaaa] leading-[50px] text-center shrink-0">
+                    <label className="w-[150px] text-[15px] bg-cream mr-px text-gray leading-[50px] text-center shrink-0">
                         현재 보유포인트
                     </label>
-                    <div className="bg-[#0d1d32] relative flex-1 flex justify-center">
+                    <div className="bg-panel relative flex-1 flex justify-center">
                         <input
                             type="text"
                             value={points}
                             onChange={(e) => setPoints(Number(e.target.value))}
                             placeholder=""
-                            className="px-2.5 w-full text-right text-lg bg-transparent text-[#ef7c00] outline-none placeholder:text-gray/50"
+                            className="px-2.5 w-full text-right text-lg bg-transparent text-[#a6842e] outline-none placeholder:text-gray/50"
                         />
                     </div>
                 </div>
 
                 {/* Money Box */}
-                <div className="h-[120px] bg-[#07172d] mt-px p-5">
-                    <div className="h-full border border-[#29324b] px-5 py-4 flex items-center justify-between" >
+                <div className="h-[120px] bg-cream mt-px p-5">
+                    <div className="h-full border border-line px-5 py-4 flex items-center justify-between" >
                         <span className="text-[26px] font-bold text-gray shrink-0">쿠폰번호</span>
 
                         <div className="flex items-center flex-1 pl-10 gap-0">
@@ -106,12 +105,12 @@ const VoucherPage = () => {
                                     setPoints(v ? Number(v) : 0);
                                 }}
                                 placeholder=""
-                                className="flex-1 min-w-0 bg-transparent text-right text-[50px] text-[#ff9d00] font-rajdhani outline-none placeholder:text-white placeholder:text-3xl"
+                                className="flex-1 min-w-0 bg-transparent text-right text-[50px] text-[#a6842e] font-rajdhani outline-none placeholder:text-[#A89884] placeholder:text-3xl"
                             />
                         </div>
                     </div>
                 </div>
-                <Button variant="red" className="mt-px w-full text-lg font-normal h-[100px] rounded-none text-gray px-12.5">
+                <Button variant="red" className="mt-px w-full text-lg font-normal h-[100px] rounded-none text-white px-12.5">
                     쿠폰사용
                 </Button>
 

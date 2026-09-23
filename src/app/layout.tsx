@@ -59,7 +59,7 @@ export default function RootLayout({
             <MailboxCountsProvider>
               <AgentCodeProvider>
                 <AuthModalProvider>
-                  <Toaster position="top-center" theme="dark" richColors toastOptions={{ style: { background: '#0d1217', border: '1px solid #29324b', color: '#ffffff' } }} />
+                  <Toaster position="top-center" theme="light" richColors toastOptions={{ style: { background: '#ffffff', border: '1px solid #e4d7c3', color: '#2a241c' } }} />
                   <div className="flex min-h-screen min-w-0 flex-col overflow-x-hidden">
                     <Header />
                     <div className="mt-17.5 flex min-w-0 flex-1 flex-col lg:mt-20">

@@ -80,7 +80,7 @@ const Table = <T,>({
             <th
               key={col.key as string}
               className={cn(
-                "sticky top-0 z-10 border-b border-r border-[#070a0f] px-5 py-4 text-center text-sm font-medium whitespace-nowrap bg-[#29324b] text-gray last:border-r-0",
+                "sticky top-0 z-10 border-b border-r border-line px-5 py-4 text-center text-sm font-medium whitespace-nowrap bg-line text-ink last:border-r-0",
                 col.orderable ? "cursor-pointer" : "",
                 col.headerClassName || "",
                 headerClassName || ""
@@ -120,7 +120,7 @@ const Table = <T,>({
           <tr>
             <td
               colSpan={columns.length}
-              className="text-center text-base lg:text-xl font-bold text-[#ef7c00] py-8 bg-[#070a0f]"
+              className="text-center text-base lg:text-xl font-bold text-[#a6842e] py-8 bg-white"
             >
               기록이 없습니다
             </td>
@@ -131,9 +131,9 @@ const Table = <T,>({
               key={(row as any).id ?? idx}
               style={data.length >= 15 ? { contentVisibility: "auto" } : undefined}
               className={cn(
-                "text-sm lg:text-base text-gray transition-colors duration-150 bg-[#070a0f]",
-                onRowClick ? "cursor-pointer hover:bg-gray-800" : "",
-                selectedRows?.has((row as any).id) ? "bg-gray-800" : "",
+                "text-sm lg:text-base text-ink transition-colors duration-150 bg-white",
+                onRowClick ? "cursor-pointer hover:bg-[#F8F1E4]" : "",
+                selectedRows?.has((row as any).id) ? "bg-cream" : "",
                 trClassName || "",
                 getRowClassName?.(row) || ""
               )}
@@ -159,7 +159,7 @@ const Table = <T,>({
     <div className="overflow-hidden">
       {title != null && (
         <div
-          className="relative z-10 mb-px flex h-[62px] shrink-0 items-center bg-[#07172d]"
+          className="relative z-10 mb-px flex h-[62px] shrink-0 items-center bg-cream"
           style={{
             backgroundImage: `url(${TITLE_OVERLAY})`,
             backgroundPosition: "left",
@@ -167,11 +167,10 @@ const Table = <T,>({
           }}
         >
           <span
-            className="block min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-base font-semibold text-gray"
+            className="block min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-base font-semibold text-ink"
             style={{
               lineHeight: "62px",
               marginLeft: "20px",
-              textShadow: "0 0 10px rgb(0 0 0 / 50%)",
             }}
           >
             {title}

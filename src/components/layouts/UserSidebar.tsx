@@ -61,24 +61,24 @@ function UserSidebarContent({ onClose }: { onClose: () => void }) {
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
       transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
-      className="fixed inset-0 z-100 w-full bg-[#161616] flex flex-col"
+      className="fixed inset-0 z-100 w-full bg-panel flex flex-col"
     >
       {/* Header */}
-      <div className="w-full h-28.5 leading-28.5 bg-[#161616] border-b border-[#2f2f2f] flex items-center justify-between px-5 shrink-0">
+      <div className="w-full h-28.5 leading-28.5 bg-panel border-b border-line flex items-center justify-between px-5 shrink-0">
         <Link href="/" onClick={onClose} className="flex items-center">
           <Image
             src="/images/logo/ksky.png"
             alt="KSKY SOLUTION"
             width={120}
             height={37}
-            className="h-12.5 w-auto object-cover"
+            className="h-12.5 w-auto rounded-md bg-[#1a1614] object-contain px-1.5"
           />
         </Link>
         <Button
           variant="transparent"
           onClick={onClose}
           aria-label="Close menu"
-          className="text-[#ffc000] font-bold text-xs uppercase tracking-wide hover:text-[#ffc000] transition-colors"
+          className="text-gold font-bold text-xs uppercase tracking-wide hover:text-gold transition-colors"
         >
           CLOSE
         </Button>
@@ -133,43 +133,43 @@ function LoggedInContent({ onClose }: { onClose: () => void }) {
       {/* Top section: content + My Page column */}
       <div className="flex">
         {/* Main content - left */}
-        <div className="flex-1 flex flex-col border-r border-[#2f2f2f]">
+        <div className="flex-1 flex flex-col border-r border-line">
           {/* Row 1: Greeting + Logout */}
-          <div className="grid grid-cols-4 h-11.25 items-center justify-between border-b border-[#2f2f2f]">
-            <span className="text-gray text-xs col-span-2 gap-2 flex items-center justify-center text-center border-r border-[#2f2f2f] h-full px-1">
-              <span className="text-[#ef7c00] font-semibold truncate max-w-25">{nickname}</span>
+          <div className="grid grid-cols-4 h-11.25 items-center justify-between border-b border-line">
+            <span className="text-gray text-xs col-span-2 gap-2 flex items-center justify-center text-center border-r border-line h-full px-1">
+              <span className="text-[#a6842e] font-semibold truncate max-w-25">{nickname}</span>
               <span className="shrink-0">반갑습니다</span>
             </span>
             <Link
               href="/messages"
               onClick={onClose}
-              className="flex h-full items-center justify-center gap-0.5 border-r border-[#2f2f2f] text-[10px] font-bold text-[#d4af37] hover:bg-[#2f2f2f]/40"
+              className="flex h-full items-center justify-center gap-0.5 border-r border-line text-[10px] font-bold text-gold hover:bg-line/40"
             >
               쪽지
-              <span className={totalUnread > 0 ? "text-red-500" : "text-[#9ca3af]"}>({totalUnread > 99 ? "99+" : totalUnread})</span>
+              <span className={totalUnread > 0 ? "text-red-500" : "text-gray"}>({totalUnread > 99 ? "99+" : totalUnread})</span>
             </Link>
             <Button
               variant="transparent"
               onClick={handleLogout}
-              className="text-[#3ea2d9] h-full text-xs font-medium hover:text-[#3ea2d9] cursor-pointer"
+              className="text-gold-deep h-full text-xs font-medium hover:text-gold-deep cursor-pointer"
             >
               로그아웃
             </Button>
           </div>
 
           {/* Row 2: Money + Points */}
-          <div className="flex items-center justify-center gap-4 h-11.25 px-4 border-b border-[#2f2f2f]">
+          <div className="flex items-center justify-center gap-4 h-11.25 px-4 border-b border-line">
             <div className="flex items-center flex-1 text-center gap-2">
               <span className="text-gray text-xs">머니</span>
               <div className="flex items-center gap-1 justify-center flex-1">
-                <strong className="text-[#47fd0e] text-center font-bold text-xs">
+                <strong className="text-[#1f8a45] text-center font-bold text-xs">
                   {money.toLocaleString()}원
                 </strong>
                 <button
                   type="button"
                   aria-label="Refresh"
                   onClick={handleRefresh}
-                  className="text-gray hover:text-white transition-colors p-1"
+                  className="text-gray hover:text-gold-deep transition-colors p-1"
                 >
                   <TfiReload className="size-5 text-gray/50" />
                 </button>
@@ -177,8 +177,8 @@ function LoggedInContent({ onClose }: { onClose: () => void }) {
 
             </div>
             <div className="flex items-center flex-1 gap-2">
-              <span className="text-white text-xs">포인트</span>
-              <strong className="text-[#47fd0e] flex-1 text-center font-bold text-xs">
+              <span className="text-ink text-xs">포인트</span>
+              <strong className="text-[#1f8a45] flex-1 text-center font-bold text-xs">
                 {points.toLocaleString()}P
               </strong>
             </div>
@@ -186,28 +186,28 @@ function LoggedInContent({ onClose }: { onClose: () => void }) {
 
           <div className="flex flex-col">
             {/* Row 3: Action buttons grid */}
-            <div className="grid grid-cols-4 border-b border-[#2f2f2f]">
+            <div className="grid grid-cols-4 border-b border-line">
               <Link
                 href="/points"
-                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-[#2f2f2f] hover:bg-[#2f2f2f]/50 transition-colors"
+                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-line hover:bg-line/50 transition-colors"
               >
                 포인트전환
               </Link>
               <Link
                 href="/deposit"
-                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-[#2f2f2f] hover:bg-[#2f2f2f]/50 transition-colors"
+                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-line hover:bg-line/50 transition-colors"
               >
                 입금하기
               </Link>
               <Link
                 href="/deposit-trc20"
-                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-[#2f2f2f] hover:bg-[#2f2f2f]/50 transition-colors"
+                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-r border-b border-line hover:bg-line/50 transition-colors"
               >
                 테더입금하기
               </Link>
               <Link
                 href="/withdraw"
-                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-b border-[#2f2f2f] hover:bg-[#2f2f2f]/50 transition-colors"
+                className="h-11.25 flex items-center justify-center w-full text-center text-gray text-xs font-medium border-b border-line hover:bg-line/50 transition-colors"
               >
                 출금하기
               </Link>
@@ -215,7 +215,7 @@ function LoggedInContent({ onClose }: { onClose: () => void }) {
             {/* Bottom: Full-width CTA */}
             <Link
               href="#"
-              className="h-11.25 flex items-center justify-center px-4 text-center text-gray text-xs font-medium bg-[#850909] hover:bg-[#850909]/90 transition-colors"
+              className="h-11.25 flex items-center justify-center px-4 text-center text-white text-xs font-medium bg-[#850909] hover:bg-[#850909]/90 transition-colors"
             >
               카지노 & 슬롯 머니 가져오기
             </Link>
@@ -226,7 +226,7 @@ function LoggedInContent({ onClose }: { onClose: () => void }) {
         {/* My Page - right column, spans rows 1-3 */}
         <Link
           href="/my-page"
-          className="flex items-center justify-center w-20 shrink-0 bg-[#161616] border-l border-b border-[#2f2f2f] text-gray text-xs font-medium hover:bg-[#2f2f2f]/50 transition-colors"
+          className="flex items-center justify-center w-20 shrink-0 bg-panel border-l border-b border-line text-gray text-xs font-medium hover:bg-line/50 transition-colors"
         >
           <span className="[text-orientation:mixed]">
             마이페이지
@@ -297,9 +297,9 @@ function LoginFormContent({
         autoComplete="username"
         className={cn(
           "w-full rounded-md px-4 py-3 h-12",
-          "bg-[#7e8a93] placeholder:text-[#ffc967]/90",
-          "text-white font-medium",
-          "focus:outline-none focus:ring-2 focus:ring-[#ffc000]/50"
+          "border border-line bg-white placeholder:text-[#A89884]",
+          "text-ink font-medium",
+          "focus:outline-none focus:ring-2 focus:ring-gold/50"
         )}
       />
       <input
@@ -311,15 +311,15 @@ function LoginFormContent({
         autoComplete="current-password"
         className={cn(
           "w-full rounded-md px-4 py-3 h-12",
-          "bg-[#7e8a93] placeholder:text-[#ffc967]/90",
-          "text-white font-medium",
-          "focus:outline-none focus:ring-2 focus:ring-[#ffc000]/50"
+          "border border-line bg-white placeholder:text-[#A89884]",
+          "text-ink font-medium",
+          "focus:outline-none focus:ring-2 focus:ring-gold/50"
         )}
       />
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full h-12 rounded-md font-bold text-white bg-[#42526b] hover:bg-[#42526b]/90"
+        className="w-full h-12 rounded-md font-bold text-ink bg-gold hover:bg-gold/90"
       >
         {isLoading ? "로그인 중..." : "로그인"}
       </Button>
@@ -329,7 +329,7 @@ function LoginFormContent({
           onClose();
           onSignUp();
         }}
-        className="w-full h-12 rounded-md font-bold text-white bg-[#28303d] hover:bg-[#28303d]/90"
+        className="w-full h-12 rounded-md font-bold text-ink bg-gold-bright hover:bg-gold-bright/90"
       >
         회원가입
       </Button>

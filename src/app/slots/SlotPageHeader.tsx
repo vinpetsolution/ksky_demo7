@@ -32,8 +32,8 @@ export function SlotPageHeader() {
           ripple
           onClick={() => setSearchOpen(true)}
           className={cn(
-            "flex h-7 w-max items-center justify-center rounded-sm bg-gold px-2.5 text-xs font-semibold text-[#101010] lg:h-8 lg:text-sm",
-            "shadow-[0_3px_1px_-2px_#0003,0_2px_2px_#00000024,0_1px_5px_#0000001f]",
+            "flex h-7 w-max items-center justify-center rounded-sm bg-gold px-2.5 text-xs font-semibold text-ink lg:h-8 lg:text-sm",
+            "shadow-[0_3px_1px_-2px_#5a461e14,0_2px_2px_#5a461e1a,0_1px_5px_#5a461e14]",
           )}
           leftIcon={<IoSearch className="size-4 shrink-0 lg:size-5" />}
         >

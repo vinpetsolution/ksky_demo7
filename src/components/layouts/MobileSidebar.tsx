@@ -27,25 +27,25 @@ interface MobileSidebarProps {
 }
 
 const mobileSideNavHeaderClass =
-  "relative flex min-h-14 shrink-0 items-center border-b border-white/[0.08] bg-panel px-2.5 py-1.5";
+  "relative flex min-h-14 shrink-0 items-center border-b border-line/[0.08] bg-panel px-2.5 py-1.5";
 
 const mobileNavActionBtnClass = cn(
   "inline-flex h-[42px] w-full cursor-pointer items-center justify-center gap-2 rounded-[10px] px-3.5",
-  "border border-[rgba(128,101,40,0.28)] bg-[linear-gradient(180deg,#161b22,#0d1217)]",
-  "text-sm font-semibold text-white",
+  "border border-[rgba(198,161,91,0.28)] bg-[linear-gradient(180deg,#fffcf7,#ffffff)]",
+  "text-sm font-semibold text-ink",
   "transition-[border-color,background,color] duration-200 ease-in-out",
-  "hover:border-gold-border hover:bg-[linear-gradient(90deg,#c9a22724,#c9a22708)] hover:text-gold",
+  "hover:border-gold-border hover:bg-[linear-gradient(90deg,#c6a15b24,#c6a15b08)] hover:text-gold",
 );
 
 const mobileNavActionBtnHighlightClass = "border-gold-border text-gold-soft group";
 
 const mobileSideNavLinkClass = cn(
   "relative inline-flex h-[52px] w-full cursor-pointer items-center justify-start gap-2.5 overflow-hidden rounded-[10px] px-3 py-1.5",
-  "border border-[rgba(128,101,40,0.22)] bg-[linear-gradient(180deg,#161b22,#0d1217)]",
-  "text-sm font-semibold text-white",
+  "border border-[rgba(198,161,91,0.22)] bg-[linear-gradient(180deg,#fffcf7,#ffffff)]",
+  "text-sm font-semibold text-ink",
   "transition-[transform,background,border-color,box-shadow,color] duration-[220ms] ease-in-out",
-  "hover:translate-x-[3px] hover:border-gold-border hover:bg-[linear-gradient(90deg,#c9a2272e,#c9a22708)] hover:text-gold hover:shadow-[0_8px_20px_-12px_#c9a22773]",
-  "data-active:translate-x-[3px] data-active:border-gold-border data-active:bg-[linear-gradient(90deg,#c9a2272e,#c9a22708)] data-active:text-gold data-active:shadow-[0_8px_20px_-12px_#c9a22773]",
+  "hover:translate-x-[3px] hover:border-gold-border hover:bg-[linear-gradient(90deg,#c6a15b2e,#c6a15b08)] hover:text-gold hover:shadow-[0_8px_20px_-12px_#c6a15b73]",
+  "data-active:translate-x-[3px] data-active:border-gold-border data-active:bg-[linear-gradient(90deg,#c6a15b2e,#c6a15b08)] data-active:text-gold data-active:shadow-[0_8px_20px_-12px_#c6a15b73]",
 );
 
 function HamburgerButton({
@@ -210,7 +210,7 @@ function MobileSidebarContent({
         }}
       >
         <FaHeart className="size-4 shrink-0" aria-hidden />
-        <span className="text-[#757575] transition-colors duration-200 group-hover:text-gold">
+        <span className="text-gray transition-colors duration-200 group-hover:text-gold">
           {action.label}
         </span>
       </MobileSidebarActionButton>
@@ -223,7 +223,7 @@ function MobileSidebarContent({
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "-100%", opacity: 0 }}
       transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
-      className="fixed inset-0 z-100 flex w-full flex-col bg-black"
+      className="fixed inset-0 z-100 flex w-full flex-col bg-white"
     >
       <div className={mobileSideNavHeaderClass}>
         <HamburgerButton onClick={onClose} ariaLabel="Close menu" />
@@ -238,7 +238,7 @@ function MobileSidebarContent({
             width={152}
             height={47}
             unoptimized
-            className="block h-12.5 w-22.5 object-contain"
+            className="block h-12.5 w-22.5 rounded-md bg-[#1a1614] object-contain px-1.5"
             priority
           />
         </Link>
@@ -255,7 +255,7 @@ function MobileSidebarContent({
           ))}
         </div>
 
-        <p className="mb-2 mt-5 px-1 text-xs font-semibold uppercase tracking-wide text-[#757575]">
+        <p className="mb-2 mt-5 px-1 text-xs font-semibold uppercase tracking-wide text-gray">
           더보기 +
         </p>
         <div className="flex flex-col gap-2.5">

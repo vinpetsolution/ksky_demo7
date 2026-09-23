@@ -53,11 +53,11 @@ export function QnADetailModal({ isOpen, qna, onClose }: QnADetailModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden bg-[#313742] shadow-2xl border border-[#313742]"
+        className="relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden bg-line shadow-2xl border border-line"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative flex shrink-0 items-center justify-center h-13.5 border-b border-[#1f242e]">
-          <h2 className="text-lg font-bold text-white truncate px-10">
+        <div className="relative flex shrink-0 items-center justify-center h-13.5 border-b border-line">
+          <h2 className="text-lg font-bold text-ink truncate px-10">
             고객센터 - {qna.title}
           </h2>
           <Button
@@ -71,17 +71,17 @@ export function QnADetailModal({ isOpen, qna, onClose }: QnADetailModalProps) {
           </Button>
         </div>
 
-        <div className="flex-1 overflow-y-auto bg-[#11141d]">
+        <div className="flex-1 overflow-y-auto bg-panel">
           <div className="space-y-4 p-6">
-            <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-ink/70">
               <span className={`inline-flex items-center rounded px-2 py-0.5 text-xs font-semibold ${status.className}`}>
                 {status.text}
               </span>
-              <span className="text-white">제목: {qna.title}</span>
+              <span className="text-ink">제목: {qna.title}</span>
               <span className="ml-auto">신청시간: {formatKoDateTime(qna.createdAt)}</span>
             </div>
 
-            <div className="text-xs text-white/60">
+            <div className="text-xs text-ink/60">
               글쓴이: {qna.userName || "-"}
               {qna.answeredByName && (
                 <>
@@ -91,27 +91,27 @@ export function QnADetailModal({ isOpen, qna, onClose }: QnADetailModalProps) {
               )}
             </div>
 
-            <div className="rounded border border-[#2a3140] bg-[#0d1117] p-4">
-              <p className="mb-2 text-xs font-semibold text-white/50">내용</p>
-              <p className="whitespace-pre-wrap text-sm leading-relaxed text-white">
+            <div className="rounded border border-line bg-panel p-4">
+              <p className="mb-2 text-xs font-semibold text-ink/55">내용</p>
+              <p className="whitespace-pre-wrap text-sm leading-relaxed text-ink">
                 {qna.message}
               </p>
             </div>
 
-            <div className="rounded border border-[#2a3140] bg-[#0d1117] p-4">
-              <p className="mb-2 text-xs font-semibold text-white/50">답변</p>
+            <div className="rounded border border-line bg-panel p-4">
+              <p className="mb-2 text-xs font-semibold text-ink/55">답변</p>
               {qna.answer ? (
-                <p className="whitespace-pre-wrap text-sm leading-relaxed text-white">
+                <p className="whitespace-pre-wrap text-sm leading-relaxed text-ink">
                   {qna.answer}
                 </p>
               ) : (
-                <p className="text-sm text-white/50">아직 답변이 등록되지 않았습니다.</p>
+                <p className="text-sm text-ink/55">아직 답변이 등록되지 않았습니다.</p>
               )}
             </div>
           </div>
         </div>
 
-        <div className="border-t border-[#313742]">
+        <div className="border-t border-line">
           <Button
             type="button"
             variant="darkBlueGlow"

@@ -65,14 +65,14 @@ export function AgentCodeModal({
       aria-labelledby="agent-code-modal-title"
     >
       <div
-        className="relative w-full max-w-md overflow-hidden bg-[#313742] shadow-2xl border border-[#313742]"
+        className="relative w-full max-w-md overflow-hidden bg-line shadow-2xl border border-line"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-center h-13.5">
           <h2
             id="agent-code-modal-title"
-            className="text-lg font-bold text-white"
+            className="text-lg font-bold text-ink"
           >
             회원가입
           </h2>
@@ -85,8 +85,8 @@ export function AgentCodeModal({
             &times;
           </Button>
         </div>
-        <form onSubmit={handleSubmit} className="bg-[#11141d]">
-          <div className="pt-5 pb-4 px-6 border-b border-[#313742]">
+        <form onSubmit={handleSubmit} className="bg-panel">
+          <div className="pt-5 pb-4 px-6 border-b border-line">
             <label
               htmlFor="agent-code"
               className="mb-2 block text-sm font-medium text-gray-300"
@@ -103,9 +103,9 @@ export function AgentCodeModal({
               }}
               placeholder="추천인 (4자이상 영문, 숫자만 가능)"
               className={cn(
-                "w-full rounded-full border border-[#3a3a3a] bg-[#0d1117] px-4 py-3",
-                "text-white placeholder:text-white/40",
-                "focus:border-[#ff8c00] focus:outline-none focus:ring-1 focus:ring-[#ff8c00]/50",
+                "w-full rounded-full border border-line bg-panel px-4 py-3",
+                "text-ink placeholder:text-[#A89884]",
+                "focus:border-[#a6842e] focus:outline-none focus:ring-1 focus:ring-[#a6842e]/50",
                 error && "border-red-500"
               )}
               autoComplete="off"
@@ -115,7 +115,7 @@ export function AgentCodeModal({
             )}
           </div>
           {/* Footer */}
-          <div className="border-t border-[#313742]">
+          <div className="border-t border-line">
             <Button
               type="submit"
               variant="darkBlueGlow"

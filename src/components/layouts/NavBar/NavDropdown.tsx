@@ -9,8 +9,8 @@ interface NavDropdownProps {
 
 const DROPDOWN_PANEL_CLASS = cn(
   'min-w-[140px]',
-  'bg-[#11141d] backdrop-blur-sm',
-  'border-t-[3px] border-t-[#ff8c00] shadow-lg'
+  'bg-panel backdrop-blur-sm',
+  'border-t-[3px] border-t-[#a6842e] shadow-lg'
 );
 
 export const NavDropdown = ({ items, pathname }: NavDropdownProps) => (

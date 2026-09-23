@@ -29,12 +29,12 @@ const statusInfo = (status: string, isRead: boolean): { text: string; className:
   const s = (status || "").toLowerCase();
   if (s === "answered") {
     if (isRead) {
-      return { text: "확인됨", className: "text-green-400" };
+      return { text: "확인됨", className: "text-green-700" };
     }
     return { text: "읽지않음", className: "text-red-500 font-bold" };
   }
-  if (s === "closed") return { text: "종료됨", className: "text-gray-400" };
-  return { text: "대기중", className: "text-yellow-400" };
+  if (s === "closed") return { text: "종료됨", className: "text-gray" };
+  return { text: "대기중", className: "text-gold-deep" };
 };
 
 const formatDate = (iso: string): string => {
@@ -86,7 +86,7 @@ const INQUIRY_COLUMNS: Column<InquiryRow>[] = [
     width: "220px",
     render: (row) => (
       <span
-        className={row.raw.answer ? "text-white" : "text-white/40"}
+        className={row.raw.answer ? "text-ink" : "text-gray"}
         title={row.raw.answer || undefined}
       >
         {row.answerPreview}
@@ -128,17 +128,17 @@ const InquiriesPage = () => {
               title="고객센터"
               columns={INQUIRY_COLUMNS}
               data={tableData}
-              trClassName="bg-[#0d1d32] cursor-pointer hover:bg-[#152842]"
-              cellClassName="border-r border-[#070a0f] border-b"
+              trClassName="bg-panel cursor-pointer hover:bg-[#f8f1e4]"
+              cellClassName="border-r border-line border-b"
               getRowClassName={(row) =>
-                parseInt(row.id.replace(/\D/g, ""), 10) % 2 === 1 ? "bg-[#0a1428]" : ""
+                parseInt(row.id.replace(/\D/g, ""), 10) % 2 === 1 ? "bg-[#f8f1e4]" : ""
               }
               onRowClick={handleRowClick}
             />
           </div>
         </div>
 
-        <div className="mt-px grid grid-cols-3 gap-px bg-[#031124] lg:flex lg:h-12.5 lg:justify-end">
+        <div className="mt-px grid grid-cols-3 gap-px bg-line lg:flex lg:h-12.5 lg:justify-end">
           <Button
             variant="green"
             onClick={() => setIsWriteOpen(true)}
@@ -156,7 +156,7 @@ const InquiriesPage = () => {
           <Button
             variant="red"
             onClick={() => toast.info("데모 페이지입니다.")}
-            className="min-h-12 w-full rounded-none py-2 text-xs font-normal text-gray md:text-sm lg:h-full lg:w-34 lg:py-0"
+            className="min-h-12 w-full rounded-none py-2 text-xs font-normal text-white md:text-sm lg:h-full lg:w-34 lg:py-0"
           >
             메시지 전체 삭제
           </Button>

@@ -116,22 +116,22 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
           className="flex w-full flex-col pt-px lg:flex-row"
           style={{ marginLeft: "-1px" }}
         >
-          <div className="hidden h-50 w-81.25 shrink-0 flex-col justify-center bg-[#11141d88] backdrop-blur-[5px] lg:flex">
-            <span className="block pr-10 text-right text-[40px] font-extralight text-[#aaaaaa]">
+          <div className="hidden h-50 w-81.25 shrink-0 flex-col justify-center bg-[#fffcf7cc] backdrop-blur-[5px] lg:flex">
+            <span className="block pr-10 text-right text-[40px] font-extralight text-gray">
               🏆
             </span>
-            <span className="-mt-4 block pr-10 text-right text-[32px] font-normal text-[#ef7c00]">
+            <span className="-mt-4 block pr-10 text-right text-[32px] font-normal text-[#a6842e]">
               {pageTitle}
             </span>
           </div>
           <div
-            className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#11141d88] px-5 py-6 backdrop-blur-[5px] lg:h-50 lg:px-0 lg:py-0"
+            className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#fffcf7cc] px-5 py-6 backdrop-blur-[5px] lg:h-50 lg:px-0 lg:py-0"
             style={{ marginRight: "1px" }}
           >
-            <h1 className="mb-2 pl-5 text-xl font-semibold text-[#ef7c00] lg:hidden">
+            <h1 className="mb-2 pl-5 text-xl font-semibold text-[#a6842e] lg:hidden">
               🏆 {pageTitle}
             </h1>
-            <div className="space-y-1 pl-5 text-sm leading-[1.6] text-[#aaaaaa] lg:pl-10 lg:text-[15px]">
+            <div className="space-y-1 pl-5 text-sm leading-[1.6] text-gray lg:pl-10 lg:text-[15px]">
               <p>진행 중인 이벤트별 배팅 랭킹을 확인할 수 있습니다.</p>
               <p>전체 · 카지노 · 슬롯 탭으로 구분하여 조회할 수 있습니다.</p>
             </div>
@@ -139,11 +139,11 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
         </div>
 
         {events.length > 0 && (
-          <div className="mt-px bg-[#07172d] p-3 md:p-4">
+          <div className="mt-px bg-cream p-3 md:p-4">
             <select
               value={selectedEventId}
               onChange={(e) => setSelectedEventId(e.target.value)}
-              className="h-10 w-full rounded border border-[#29324b] bg-[#0d1d32] px-3 text-sm text-gray outline-none focus:border-[#ef7c00]"
+              className="h-10 w-full rounded border border-line bg-panel px-3 text-sm text-gray outline-none focus:border-[#a6842e]"
             >
               {events.map((event) => (
                 <option key={event.id} value={event.id}>
@@ -164,8 +164,8 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
               className={cn(
                 "h-12 rounded-none text-sm font-semibold md:h-15.5 md:text-base",
                 rankingType === tab.key
-                  ? "border border-gold bg-[linear-gradient(90deg,#d8b24a,#c9a227)] text-[#101010]"
-                  : "bg-[#0d1d32] text-[#aaaaaa] hover:bg-[#111d30] hover:text-[#ef7c00]/80",
+                  ? "border border-gold bg-[linear-gradient(90deg,#e8d5a3,#c6a15b)] text-ink"
+                  : "bg-panel text-gray hover:bg-[#f8f1e4] hover:text-[#a6842e]/80",
               )}
             >
               {tab.label}
@@ -174,22 +174,22 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
         </div>
 
         {myRank && myRankValue != null && (
-          <div className="mt-px border border-gold/40 bg-[linear-gradient(90deg,#c9a2271a,#c9a22708)] p-4">
+          <div className="mt-px border border-gold/40 bg-[linear-gradient(90deg,#c6a15b1a,#c6a15b08)] p-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <span className="rounded bg-gold px-2 py-0.5 text-xs font-bold text-[#101010]">
+                <span className="rounded bg-gold px-2 py-0.5 text-xs font-bold text-ink">
                   ME
                 </span>
-                <span className="text-sm font-semibold text-white">내 순위</span>
+                <span className="text-sm font-semibold text-ink">내 순위</span>
               </div>
               <div className="flex items-center gap-4 text-sm">
-                <span className="text-[#aaaaaa]">
+                <span className="text-gray">
                   순위{" "}
-                  <strong className="text-lg text-[#ef7c00]">{myRankValue}</strong>
+                  <strong className="text-lg text-[#a6842e]">{myRankValue}</strong>
                 </span>
-                <span className="text-[#aaaaaa]">
+                <span className="text-gray">
                   배팅금액{" "}
-                  <strong className="text-[#47fd0e]">{formatMoney(myBetAmount)}</strong>
+                  <strong className="text-[#1f8a45]">{formatMoney(myBetAmount)}</strong>
                 </span>
               </div>
             </div>
@@ -199,14 +199,14 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
         <div className="mt-px overflow-x-auto">
           <table className="min-w-120 w-full border-collapse">
             <thead>
-              <tr className="bg-[#29324b] text-sm text-gray">
-                <th className="border-b border-r border-[#070a0f] px-4 py-3 text-center font-medium">
+              <tr className="bg-line text-sm text-ink">
+                <th className="border-b border-r border-line px-4 py-3 text-center font-medium">
                   순위
                 </th>
-                <th className="border-b border-r border-[#070a0f] px-4 py-3 text-center font-medium">
+                <th className="border-b border-r border-line px-4 py-3 text-center font-medium">
                   {target === "agent" ? "에이전트" : "유저"}
                 </th>
-                <th className="border-b border-[#070a0f] px-4 py-3 text-center font-medium">
+                <th className="border-b border-line px-4 py-3 text-center font-medium">
                   배팅금액
                 </th>
               </tr>
@@ -216,7 +216,7 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
                 <tr>
                   <td
                     colSpan={3}
-                    className="bg-[#0d1d32] py-12 text-center text-base font-semibold text-[#ef7c00]"
+                    className="bg-panel py-12 text-center text-base font-semibold text-[#a6842e]"
                   >
                     {emptyMessage}
                   </td>
@@ -237,39 +237,39 @@ export function RankingPageContent({ target, pageTitle }: RankingPageContentProp
                     <tr
                       key={rowKey}
                       className={cn(
-                        "border-b border-[#070a0f] text-sm text-gray",
+                        "border-b border-line text-sm text-ink",
                         item.isSelf
-                          ? "bg-[linear-gradient(90deg,#c9a22726,#c9a2270d)]"
-                          : "bg-[#0d1d32]",
+                          ? "bg-[linear-gradient(90deg,#c6a15b26,#c6a15b0d)]"
+                          : "bg-panel",
                       )}
                     >
-                      <td className="border-r border-[#070a0f] px-4 py-3 text-center">
+                      <td className="border-r border-line px-4 py-3 text-center">
                         <span
                           className={cn(
-                            item.rank <= 3 ? "text-[#ef7c00] font-semibold" : "",
+                            item.rank <= 3 ? "text-[#a6842e] font-semibold" : "",
                           )}
                         >
                           {rankDisplay(item.rank)}
                         </span>
                       </td>
-                      <td className="border-r border-[#070a0f] px-4 py-3 text-center">
+                      <td className="border-r border-line px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-0.5">
-                          <span className="flex items-center gap-1.5 font-medium text-white">
+                          <span className="flex items-center gap-1.5 font-medium text-ink">
                             {displayName}
                             {item.isSelf && (
-                              <span className="rounded bg-gold px-1.5 py-px text-[10px] font-bold text-[#101010]">
+                              <span className="rounded bg-gold px-1.5 py-px text-[10px] font-bold text-ink">
                                 ME
                               </span>
                             )}
                           </span>
-                          <span className="text-xs text-[#888888]">
+                          <span className="text-xs text-gray">
                             {isAgent
                               ? `Lv.${agentItem.agentLevel} · 회원 ${agentItem.directMemberCount}명`
                               : `@${item.isSelf ? userItem.agentId : maskName(userItem.agentId)}`}
                           </span>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-center font-semibold text-[#47fd0e]">
+                      <td className="px-4 py-3 text-center font-semibold text-[#1f8a45]">
                         {formatMoney(bet)}
                       </td>
                     </tr>

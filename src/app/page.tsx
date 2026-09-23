@@ -30,8 +30,8 @@ export default function Home() {
             <Button
               variant="transparent"
               ripple
-              className={cn("rounded-sm w-max h-7 lg:h-8 bg-gold font-semibold px-2.5 text-xs lg:text-sm text-[#101010] flex items-center justify-center ",
-                "shadow-[0_3px_1px_-2px_#0003,0_2px_2px_#00000024,0_1px_5px_#0000001f]"
+              className={cn("rounded-sm w-max h-7 lg:h-8 bg-gold font-semibold px-2.5 text-xs lg:text-sm text-ink flex items-center justify-center ",
+                "shadow-[0_3px_1px_-2px_#5a461e14,0_2px_2px_#5a461e1a,0_1px_5px_#5a461e14]"
               )}
             >
               더보기
@@ -75,8 +75,8 @@ export default function Home() {
             <Button
               variant="transparent"
               ripple
-              className={cn("rounded-sm w-max h-7 lg:h-8 bg-gold font-semibold px-2.5 text-xs lg:text-sm text-[#101010] flex items-center justify-center ",
-                "shadow-[0_3px_1px_-2px_#0003,0_2px_2px_#00000024,0_1px_5px_#0000001f]"
+              className={cn("rounded-sm w-max h-7 lg:h-8 bg-gold font-semibold px-2.5 text-xs lg:text-sm text-ink flex items-center justify-center ",
+                "shadow-[0_3px_1px_-2px_#5a461e14,0_2px_2px_#5a461e1a,0_1px_5px_#5a461e14]"
               )}
             >
               더보기

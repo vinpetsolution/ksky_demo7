@@ -26,7 +26,7 @@ interface LoginModalProps {
 
 const inputClassName = cn(
   "h-10 w-full rounded-lg border bg-transparent",
-  "px-3 pl-10 text-base text-white placeholder:text-white/50",
+  "px-3 pl-10 text-base text-ink placeholder:text-[#A89884]",
   "focus:outline-none",
   "disabled:cursor-not-allowed disabled:opacity-50",
 );
@@ -112,14 +112,14 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
         onSubmit={handleLogin}
       >
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="login-id" className="text-base text-white">
+          <label htmlFor="login-id" className="text-base text-ink">
             아이디/휴대폰 번호
           </label>
           <div className="relative">
             <FaUser
               className={cn(
                 "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2",
-                errors.userName ? "text-error" : "text-white",
+                errors.userName ? "text-error" : "text-ink",
               )}
               aria-hidden
             />
@@ -137,7 +137,7 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
                 inputClassName,
                 errors.userName
                   ? "border-error focus:border-error"
-                  : "border-white focus:border-white",
+                  : "border-line focus:border-line",
               )}
               autoComplete="username"
               disabled={isLoading}
@@ -155,14 +155,14 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="login-password" className="text-base text-white">
+          <label htmlFor="login-password" className="text-base text-ink">
             비밀번호
           </label>
           <div className="relative">
             <MdVpnKey
               className={cn(
                 "pointer-events-none absolute top-1/2 left-3 size-5 -translate-y-1/2",
-                errors.password ? "text-error" : "text-white",
+                errors.password ? "text-error" : "text-ink",
               )}
               aria-hidden
             />
@@ -181,7 +181,7 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
                 "pr-10",
                 errors.password
                   ? "border-error focus:border-error"
-                  : "border-white focus:border-white",
+                  : "border-line focus:border-line",
               )}
               autoComplete="current-password"
               disabled={isLoading}
@@ -196,7 +196,7 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
                 "absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer",
                 errors.password
                   ? "text-error hover:text-error/80"
-                  : "text-white hover:text-white/80",
+                  : "text-ink hover:text-gold-deep",
               )}
               onClick={() => setShowPassword((v) => !v)}
               aria-label={showPassword ? "비밀번호 숨기기" : "비밀번호 보기"}
@@ -232,7 +232,7 @@ export function LoginModal({ isOpen, onClose, onOpenSignUp }: LoginModalProps) {
           {isLoading ? "로그인 중...." : "로그인"}
         </Button>
 
-        <p className="mt-2 text-center text-base text-white">
+        <p className="mt-2 text-center text-base text-ink">
           계정이 없으신가요?{" "}
           <button
             type="button"

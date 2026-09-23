@@ -38,10 +38,10 @@ function resultLabel(r: string) {
 
 function resultClassName(r: string) {
     switch (r) {
-        case "Win": return "text-green-400 font-semibold";
-        case "Lose": return "text-red-400 font-semibold";
-        case "Bet": return "text-orange-400 font-semibold";
-        case "Draw": return "text-blue-400 font-semibold";
+        case "Win": return "text-green-700 font-semibold";
+        case "Lose": return "text-red-700 font-semibold";
+        case "Bet": return "text-gold-deep font-semibold";
+        case "Draw": return "text-blue-700 font-semibold";
         default: return "text-gray";
     }
 }
@@ -72,7 +72,7 @@ const BET_COLUMNS: Column<BetRecord>[] = [
         label: "베팅금",
         align: "center",
         render: (row) => (
-            <span className="text-[#ef7c00]">{formatNumber(row.betAmount)}</span>
+            <span className="text-[#a6842e]">{formatNumber(row.betAmount)}</span>
         ),
     },
     {
@@ -80,7 +80,7 @@ const BET_COLUMNS: Column<BetRecord>[] = [
         label: "당첨금",
         align: "center",
         render: (row) => (
-            <span className="text-green-400">{formatNumber(row.winAmount)}</span>
+            <span className="text-green-700">{formatNumber(row.winAmount)}</span>
         ),
     },
     {
@@ -147,19 +147,19 @@ const BetHistoryPage = () => {
             <div className="flex w-full flex-col px-0 pb-10 md:px-5">
                 {/* Header */}
                 <div className="flex w-full flex-col pt-px lg:flex-row" style={{ marginLeft: "-1px" }}>
-                    <div className="hidden h-50 w-81.25 shrink-0 flex-col justify-center bg-[#11141d88] backdrop-blur-[5px] lg:flex">
-                        <span className="block pr-10 text-right text-[40px] font-extralight text-[#aaaaaa]">
+                    <div className="hidden h-50 w-81.25 shrink-0 flex-col justify-center bg-[#fffcf7cc] backdrop-blur-[5px] lg:flex">
+                        <span className="block pr-10 text-right text-[40px] font-extralight text-gray">
                             베팅
                         </span>
-                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-[#aaaaaa]">
+                        <span className="-mt-4 block pr-10 text-right text-[40px] font-normal text-gray">
                             내역 조회
                         </span>
                     </div>
                     <div
-                        className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#11141d88] px-5 py-6 backdrop-blur-[5px] lg:h-50 lg:px-0 lg:py-0"
+                        className="flex min-h-30 min-w-0 flex-1 flex-col justify-center bg-[#fffcf7cc] px-5 py-6 backdrop-blur-[5px] lg:h-50 lg:px-0 lg:py-0"
                         style={{ marginRight: "1px" }}
                     >
-                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-[#aaaaaa] lg:pl-10 lg:text-[15px]">
+                        <div className="space-y-1 pl-5 text-sm leading-[1.6] text-gray lg:pl-10 lg:text-[15px]">
                             <p>사이트 및 회원님의 보안을 위해 7일이 지난 베팅 내역은 자동 삭제 처리됩니다.</p>
                             <p>날짜를 선택하여 원하는 기간의 베팅 내역을 조회할 수 있습니다.</p>
                         </div>
@@ -178,8 +178,8 @@ const BetHistoryPage = () => {
                             variant="transparent"
                             onClick={() => handleTabChange(t.key)}
                             className={`h-12 rounded-none text-sm font-semibold md:h-15.5 md:text-base ${activeTab === t.key
-                                    ? "bg-[#07172d] text-[#ef7c00]"
-                                    : "bg-[#0d1d32] text-[#aaaaaa] hover:bg-[#111d30] hover:text-[#ef7c00]/80"
+                                    ? "bg-cream text-[#a6842e]"
+                                    : "bg-panel text-gray hover:bg-[#f8f1e4] hover:text-[#a6842e]/80"
                                 }`}
                         >
                             {t.label}
@@ -188,33 +188,33 @@ const BetHistoryPage = () => {
                 </div>
 
                 {/* Filter / Date bar */}
-                <div className="mt-px flex flex-wrap items-center gap-2 bg-[#07172d] p-3 md:gap-4 md:p-4">
+                <div className="mt-px flex flex-wrap items-center gap-2 bg-cream p-3 md:gap-4 md:p-4">
                     <div className="flex items-center gap-2">
                         <input
                             type="date"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
-                            className="h-9 rounded border border-[#29324b] bg-[#0d1d32] px-2 text-xs text-gray outline-none focus:border-[#ef7c00] md:h-10 md:px-3 md:text-sm"
+                            className="h-9 rounded border border-line bg-panel px-2 text-xs text-gray outline-none focus:border-[#a6842e] md:h-10 md:px-3 md:text-sm"
                         />
-                        <span className="text-[#aaaaaa]">~</span>
+                        <span className="text-gray">~</span>
                         <input
                             type="date"
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
-                            className="h-9 rounded border border-[#29324b] bg-[#0d1d32] px-2 text-xs text-gray outline-none focus:border-[#ef7c00] md:h-10 md:px-3 md:text-sm"
+                            className="h-9 rounded border border-line bg-panel px-2 text-xs text-gray outline-none focus:border-[#a6842e] md:h-10 md:px-3 md:text-sm"
                         />
                     </div>
                     <select
                         value={filterResult}
                         onChange={(e) => setFilterResult(e.target.value)}
-                        className="h-9 rounded border border-[#29324b] bg-[#0d1d32] px-2 text-xs text-gray outline-none focus:border-[#ef7c00] md:h-10 md:px-3 md:text-sm"
+                        className="h-9 rounded border border-line bg-panel px-2 text-xs text-gray outline-none focus:border-[#a6842e] md:h-10 md:px-3 md:text-sm"
                     >
                         <option value="">전체</option>
                         <option value="Win">당첨</option>
                         <option value="Lose">미당첨</option>
                         <option value="Bet">진행중</option>
                     </select>
-                    <span className="text-xs text-[#aaaaaa] md:text-sm">
+                    <span className="text-xs text-gray md:text-sm">
                         총 {totalCount}건
                     </span>
                 </div>
@@ -228,8 +228,8 @@ const BetHistoryPage = () => {
                                 columns={BET_COLUMNS}
                                 data={tableData}
                                 isLoading={loading}
-                                trClassName="bg-[#0d1d32]"
-                                cellClassName="border-r border-[#070a0f] border-b"
+                                trClassName="bg-panel"
+                                cellClassName="border-r border-line border-b"
                             />
                         </div>
                     </div>

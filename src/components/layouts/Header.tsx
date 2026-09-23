@@ -53,7 +53,7 @@ const Header = () => {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 w-full overflow-visible",
-          "h-15.5 lg:h-20 bg-black shadow-[0_4px_24px_#00000073]",
+          "h-15.5 lg:h-20 bg-white shadow-[0_8px_24px_rgba(90,70,30,0.12)]",
           "max-lg:h-auto max-lg:min-h-15.5 max-lg:py-1 ",
           "after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-3 after:h-[0.5px]",
           "after:bg-[linear-gradient(90deg,transparent_0%,rgba(255,238,175,0.32)_20%,rgba(255,248,210,0.58)_50%,rgba(255,238,175,0.32)_80%,transparent_100%)]",
@@ -82,7 +82,7 @@ const Header = () => {
                 width={152}
                 height={47}
                 unoptimized
-                className="block h-12.5 lg:h-auto w-22.5 lg:w-30 object-contain"
+                className="block h-12.5 lg:h-auto w-22.5 lg:w-30 rounded-md bg-[#1a1614] object-contain px-1.5"
                 priority
               />
             </Link>
@@ -94,20 +94,20 @@ const Header = () => {
                 type="button"
                 onClick={() => setIsUserSidebarOpen(true)}
                 aria-label="User menu"
-                className="flex items-center justify-end text-white"
+                className="flex items-center justify-end text-ink"
               >
                 <HiUserCircle className="size-10" />
               </button>
               <p className="whitespace-nowrap text-right text-[10px] font-semibold leading-tight">
                 <span className="text-gray">
                   Money:{" "}
-                  <strong className="font-bold text-[#47fd0e]">
+                  <strong className="font-bold text-[#1f8a45]">
                     {money.toLocaleString()}
                   </strong>
                 </span>{" "}
                 <span className="text-gray">
                   Points:{" "}
-                  <strong className="font-bold text-[#47fd0e]">
+                  <strong className="font-bold text-[#1f8a45]">
                     {points.toLocaleString()}
                   </strong>
                 </span>
@@ -146,7 +146,7 @@ const Header = () => {
                 alt="KSKY SOLUTION"
                 width={160}
                 height={60}
-                className="h-12.5 2xl:h-15 w-auto object-contain"
+                className="h-12.5 2xl:h-15 w-auto rounded-md bg-[#1a1614] object-contain px-1.5"
                 priority
                 unoptimized
               />
@@ -158,9 +158,9 @@ const Header = () => {
               leftIcon={<FaHeart className="size-4 shrink-0" />}
               onClick={() => setIsFavoritesModalOpen(true)}
               className={cn(
-                "h-10 gap-2 rounded-lg px-3 text-sm font-semibold text-white",
-                "hover:text-gold-soft hover:shadow-[0_0_14px_#c9a2272e]",
-                "hover:bg-[linear-gradient(90deg,#c9a22724,#c9a2270a)]",
+                "h-10 gap-2 rounded-lg px-3 text-sm font-semibold text-ink",
+                "hover:text-gold-soft hover:shadow-[0_0_14px_#c6a15b2e]",
+                "hover:bg-[linear-gradient(90deg,#c6a15b24,#c6a15b0a)]",
               )}
             >
               즐겨찾기 & 최근플레이

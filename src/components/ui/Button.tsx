@@ -10,17 +10,17 @@ import { useRipple } from "@/hooks/useRipple";
 
 const buttonVariants = {
   variant: {
-    darkBlue: "bg-[#29324b] text-white hover:bg-[#29324b]/80 hover:text-white active:bg-[#29324b]/80 active:text-white disabled:bg-[#29324b]/80 disabled:text-white",
+    darkBlue: "bg-cream text-ink border border-line hover:bg-[#f8f1e4] hover:text-gold-deep active:bg-[#f8f1e4] active:text-gold-deep disabled:bg-cream disabled:text-ink",
     darkBlueGlow:
-      "btn-darkBlueGlow bg-[#11141d] border border-[#313742] text-white transition-all duration-300 disabled:opacity-50",
+      "btn-darkBlueGlow bg-white border border-line text-ink transition-all duration-300 disabled:opacity-50",
     red: "bg-[#dc3545] text-white hover:bg-[#dc3545]/80 hover:text-white active:bg-[#dc3545]/80 active:text-white disabled:bg-[#dc3545]/80 disabled:text-white",
     green: "bg-[#0f7a3a] text-white hover:bg-[#0f7a3a]/80 hover:text-white active:bg-[#0f7a3a]/80 active:text-white disabled:bg-[#0f7a3a]/80 disabled:text-white",
     blue: "bg-[#1e5fa8] text-white hover:bg-[#1e5fa8]/80 hover:text-white active:bg-[#1e5fa8]/80 active:text-white disabled:bg-[#1e5fa8]/80 disabled:text-white",
     transparent:
-      "bg-transparent text-gray hover:text-black disabled:text-gray",
-    gold: "btn-elevated bg-gold [background-image:var(--background-image-gold-gradient)] border border-gold text-[#1c1c1c]",
+      "bg-transparent text-gray hover:text-gold-deep disabled:text-gray",
+    gold: "btn-elevated bg-gold [background-image:var(--background-image-gold-gradient)] border border-gold text-ink",
     darkGradient:
-      "btn-elevated bg-panel [background-image:var(--background-image-dark-gradient)] border border-gold-border text-white",
+      "btn-elevated bg-panel [background-image:var(--background-image-dark-gradient)] border border-gold-border text-ink",
   },
   size: {
     sm: "h-8 px-3 text-sm rounded-md gap-1.5",

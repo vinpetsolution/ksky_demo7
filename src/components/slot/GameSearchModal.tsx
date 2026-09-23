@@ -67,7 +67,7 @@ export function GameSearchModal({ open, onClose }: GameSearchModalProps) {
     >
       <div className="relative shrink-0">
         <IoSearch
-          className="pointer-events-none absolute left-1.5 top-1/2 size-6 -translate-y-1/2 text-white"
+          className="pointer-events-none absolute left-1.5 top-1/2 size-6 -translate-y-1/2 text-ink"
           aria-hidden
         />
         <input
@@ -75,7 +75,7 @@ export function GameSearchModal({ open, onClose }: GameSearchModalProps) {
           value={query}
           onChange={(e) => handleQueryChange(e.target.value)}
           placeholder="게임 검색"
-          className="h-10 w-full rounded-lg border border-white bg-transparent py-0 pl-10 pr-3 text-base tracking-normal text-white placeholder:text-white/40 outline-none"
+          className="h-10 w-full rounded-lg border border-line bg-transparent py-0 pl-10 pr-3 text-base tracking-normal text-ink placeholder:text-[#A89884] outline-none"
         />
       </div>
 
@@ -85,12 +85,12 @@ export function GameSearchModal({ open, onClose }: GameSearchModalProps) {
             className="size-8 animate-spin rounded-full border-4 border-gold border-t-transparent"
             aria-hidden
           />
-          <p className="text-sm text-white">게임 로딩 중...</p>
+          <p className="text-sm text-ink">게임 로딩 중...</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="flex flex-1 flex-col items-center justify-center py-16 text-center text-sm text-white/80">
+        <div className="flex flex-1 flex-col items-center justify-center py-16 text-center text-sm text-ink/80">
           <p>검색 결과가 없습니다.</p>
-          <p className="mt-2 text-[#757575]">다른 검색어를 시도해 보세요.</p>
+          <p className="mt-2 text-gray">다른 검색어를 시도해 보세요.</p>
         </div>
       ) : (
         <>
@@ -112,7 +112,7 @@ export function GameSearchModal({ open, onClose }: GameSearchModalProps) {
 
 
           <div className="flex shrink-0 mt-3 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-base font-medium text-white text-center lg:text-left">
+            <p className="text-base font-medium text-ink text-center lg:text-left">
               합계:{" "}
               <span className="tabular-nums">{filtered.length.toLocaleString()}</span>
             </p>

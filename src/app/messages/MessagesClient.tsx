@@ -49,8 +49,8 @@ function GoldTabs({
         className={cn(
           "relative py-3 text-center text-sm font-bold transition-all md:py-4 md:text-base",
           active === "messages"
-            ? "bg-linear-to-b from-[#f7e8a8] via-[#e6c34d] to-gold text-black shadow-[0_0_20px_rgba(234,179,8,0.35)]"
-            : "bg-linear-to-b from-[#2a2215] to-[#14110c] text-gold/90 hover:text-[#f7e8a8]",
+            ? "bg-linear-to-b from-gold-bright via-gold to-[#a6842e] text-ink shadow-[0_0_16px_rgba(198,161,91,0.35)]"
+            : "bg-background text-ink hover:bg-[#f8f1e4] hover:text-gold-deep",
         )}
       >
         쪽지함
@@ -61,8 +61,8 @@ function GoldTabs({
         className={cn(
           "relative py-3 text-center text-sm font-bold transition-all md:py-4 md:text-base",
           active === "notices"
-            ? "bg-linear-to-b from-[#f7e8a8] via-[#e6c34d] to-gold text-black shadow-[0_0_20px_rgba(234,179,8,0.35)]"
-            : "bg-linear-to-b from-[#2a2215] to-[#14110c] text-gold/90 hover:text-[#f7e8a8]",
+            ? "bg-linear-to-b from-gold-bright via-gold to-[#a6842e] text-ink shadow-[0_0_16px_rgba(198,161,91,0.35)]"
+            : "bg-background text-ink hover:bg-[#f8f1e4] hover:text-gold-deep",
         )}
       >
         공지사항
@@ -154,26 +154,26 @@ export default function MessagesClient() {
         <div className="relative z-10 mx-auto max-w-4xl">
           <GoldTabs active={tab} onChange={setTab} noticeBadge={noticeUnread} />
 
-          <div className="rounded-b-lg border border-t-0 border-gold/35 bg-[#0a0a0a]/95 shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur-sm">
-            <div className="border-b border-gold/25 bg-linear-to-r from-[#1a1610] to-[#0f0d0a] px-4 py-3 text-center">
-              <span className="text-sm font-semibold tracking-wide text-[#f7e8a8] md:text-base">{panelTitle}</span>
+          <div className="rounded-b-lg border border-t-0 border-gold/35 bg-white/95 shadow-[0_8px_28px_rgba(90,70,30,0.12)] backdrop-blur-sm">
+            <div className="border-b border-gold/25 bg-linear-to-r from-cream to-panel-elevated px-4 py-3 text-center">
+              <span className="text-sm font-semibold tracking-wide text-gold-deep md:text-base">{panelTitle}</span>
             </div>
 
             {tab === "messages" && (
               <>
-                <div className="hidden grid-cols-[100px_1fr_150px] gap-px border-b border-gold/20 bg-gold/15 text-xs font-bold text-gold md:grid md:text-sm">
-                  <div className="bg-[#141210] py-2.5 text-center">상태</div>
-                  <div className="bg-[#141210] py-2.5 text-center">제목</div>
-                  <div className="bg-[#141210] py-2.5 text-center">시간</div>
+                <div className="hidden grid-cols-[100px_1fr_150px] gap-px border-b border-gold/20 bg-gold/15 text-xs font-bold text-gold-deep md:grid md:text-sm">
+                  <div className="bg-cream py-2.5 text-center">상태</div>
+                  <div className="bg-cream py-2.5 text-center">제목</div>
+                  <div className="bg-cream py-2.5 text-center">시간</div>
                 </div>
 
                 <div className="min-h-50">
                   {threadsLoading ? (
-                    <div className="flex justify-center py-16 text-[#888]">로딩중...</div>
+                    <div className="flex justify-center py-16 text-gray">로딩중...</div>
                   ) : sortedThreads.length === 0 ? (
-                    <div className="flex justify-center py-16 text-center text-[#9ca3af]">표시할 쪽지가 없습니다.</div>
+                    <div className="flex justify-center py-16 text-center text-gray">표시할 쪽지가 없습니다.</div>
                   ) : (
-                    <ul className="divide-y divide-[#2a251c]">
+                    <ul className="divide-y divide-line">
                       {sortedThreads.map((row) => {
                         const unread = threadIsUnread(row);
                         return (
@@ -181,24 +181,24 @@ export default function MessagesClient() {
                             <button
                               type="button"
                               onClick={() => handleOpenThread(row)}
-                              className="grid w-full grid-cols-1 gap-1 px-3 py-3 text-left transition-colors hover:bg-[#1f1a14]/90 md:grid-cols-[100px_1fr_150px] md:items-center md:gap-0 md:px-0"
+                              className="grid w-full grid-cols-1 gap-1 px-3 py-3 text-left transition-colors hover:bg-[#f8f1e4]/90 md:grid-cols-[100px_1fr_150px] md:items-center md:gap-0 md:px-0"
                             >
-                              <div className="flex justify-center md:border-r md:border-[#2a251c]">
+                              <div className="flex justify-center md:border-r md:border-line">
                                 <span
                                   className={cn(
                                     "rounded-full px-2.5 py-0.5 text-xs font-semibold",
                                     unread
                                       ? "bg-red-600/90 text-white shadow-[0_0_8px_rgba(220,38,38,0.5)]"
-                                      : "bg-[#2a251c] text-[#9ca3af]",
+                                      : "bg-line text-gray",
                                   )}
                                 >
                                   {unread ? "미확인" : "읽음"}
                                 </span>
                               </div>
-                              <div className="min-w-0 px-2 font-medium text-[#e8dcc4] md:border-r md:border-[#2a251c]">
+                              <div className="min-w-0 px-2 font-medium text-ink md:border-r md:border-line">
                                 <span className="line-clamp-2">{row.subject || "(제목 없음)"}</span>
                               </div>
-                              <div className="text-center text-xs text-[#a8a29e] md:text-sm">
+                              <div className="text-center text-xs text-gray md:text-sm">
                                 {formatKoDate(row.lastMessageAt || row.createdAt)}
                               </div>
                             </button>
@@ -209,12 +209,12 @@ export default function MessagesClient() {
                   )}
                 </div>
 
-                <div className="border-t border-[#2a251c] p-3">
+                <div className="border-t border-line p-3">
                   <Button
                     type="button"
                     variant="transparent"
                     onClick={handleMarkAllMessagesRead}
-                    className="w-full rounded-md border border-gold/50 bg-[#1a1510] py-3 text-sm font-semibold text-[#f7e8a8] hover:bg-[#2a2215]"
+                    className="w-full rounded-md border border-gold/50 bg-background py-3 text-sm font-semibold text-gold-deep hover:bg-cream"
                   >
                     전체읽음
                   </Button>
@@ -224,19 +224,19 @@ export default function MessagesClient() {
 
             {tab === "notices" && (
               <>
-                <div className="hidden grid-cols-[100px_1fr_150px] gap-px border-b border-gold/20 bg-gold/15 text-xs font-bold text-gold md:grid md:text-sm">
-                  <div className="bg-[#141210] py-2.5 text-center">상태</div>
-                  <div className="bg-[#141210] py-2.5 text-center">제목</div>
-                  <div className="bg-[#141210] py-2.5 text-center">시간</div>
+                <div className="hidden grid-cols-[100px_1fr_150px] gap-px border-b border-gold/20 bg-gold/15 text-xs font-bold text-gold-deep md:grid md:text-sm">
+                  <div className="bg-cream py-2.5 text-center">상태</div>
+                  <div className="bg-cream py-2.5 text-center">제목</div>
+                  <div className="bg-cream py-2.5 text-center">시간</div>
                 </div>
 
                 <div className="min-h-50">
                   {noticesLoading ? (
-                    <div className="flex justify-center py-16 text-[#888]">로딩중...</div>
+                    <div className="flex justify-center py-16 text-gray">로딩중...</div>
                   ) : noticeItems.length === 0 ? (
-                    <div className="flex justify-center py-16 text-center text-[#9ca3af]">표시할 공지가 없습니다.</div>
+                    <div className="flex justify-center py-16 text-center text-gray">표시할 공지가 없습니다.</div>
                   ) : (
-                    <ul className="divide-y divide-[#2a251c]">
+                    <ul className="divide-y divide-line">
                       {noticeItems.map((row) => {
                         const unread = !row.isRead;
                         return (
@@ -244,24 +244,24 @@ export default function MessagesClient() {
                             <button
                               type="button"
                               onClick={() => openNotice(row)}
-                              className="grid w-full grid-cols-1 gap-1 px-3 py-3 text-left transition-colors hover:bg-[#1f1a14]/90 md:grid-cols-[100px_1fr_150px] md:items-center md:gap-0 md:px-0"
+                              className="grid w-full grid-cols-1 gap-1 px-3 py-3 text-left transition-colors hover:bg-[#f8f1e4]/90 md:grid-cols-[100px_1fr_150px] md:items-center md:gap-0 md:px-0"
                             >
-                              <div className="flex justify-center md:border-r md:border-[#2a251c]">
+                              <div className="flex justify-center md:border-r md:border-line">
                                 <span
                                   className={cn(
                                     "rounded-full px-2.5 py-0.5 text-xs font-semibold",
                                     unread
                                       ? "bg-red-600/90 text-white shadow-[0_0_8px_rgba(220,38,38,0.5)]"
-                                      : "bg-[#2a251c] text-[#9ca3af]",
+                                      : "bg-line text-gray",
                                   )}
                                 >
                                   {unread ? "미확인" : "읽음"}
                                 </span>
                               </div>
-                              <div className="min-w-0 px-2 font-medium text-[#e8dcc4] md:border-r md:border-[#2a251c]">
+                              <div className="min-w-0 px-2 font-medium text-ink md:border-r md:border-line">
                                 <span className="line-clamp-2">{row.title}</span>
                               </div>
-                              <div className="text-center text-xs text-[#a8a29e] md:text-sm">
+                              <div className="text-center text-xs text-gray md:text-sm">
                                 {formatKoDate(row.createdAt)}
                               </div>
                             </button>
@@ -273,7 +273,7 @@ export default function MessagesClient() {
                 </div>
 
                 {noticeTotalPages > 1 && (
-                  <div className="flex justify-center border-t border-[#2a251c] py-4">
+                  <div className="flex justify-center border-t border-line py-4">
                     <Pagination
                       currentPage={safeNoticePage}
                       totalPages={noticeTotalPages}
@@ -295,16 +295,16 @@ export default function MessagesClient() {
               onClick={() => setThreadModal(null)}
             >
               <div
-                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-gold/40 bg-[#0a0a0a] shadow-2xl"
+                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-gold/40 bg-panel shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex items-start justify-between gap-2 border-b border-[#2a251c] px-4 py-3">
-                  <h3 className="min-w-0 flex-1 text-base font-bold text-[#f7e8a8]">
+                <div className="flex items-start justify-between gap-2 border-b border-line px-4 py-3">
+                  <h3 className="min-w-0 flex-1 text-base font-bold text-gold-deep">
                     {threadModal.thread.subject}
                   </h3>
                   <button
                     type="button"
-                    className="shrink-0 text-2xl leading-none text-gold/80 hover:text-white"
+                    className="shrink-0 text-2xl leading-none text-gold/80 hover:text-gold-deep"
                     aria-label="Close"
                     onClick={() => setThreadModal(null)}
                   >
@@ -313,15 +313,15 @@ export default function MessagesClient() {
                 </div>
                 <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
                   {threadModalLoading ? (
-                    <div className="py-8 text-center text-[#888]">로딩중...</div>
+                    <div className="py-8 text-center text-gray">로딩중...</div>
                   ) : (
                     <ul className="space-y-3">
                       {threadModal.messages.map((m) => (
                         <li
                           key={m.id}
-                          className="rounded-lg border border-[#2a251c] bg-[#141210] p-3 text-sm text-[#d6d3c9]"
+                          className="rounded-lg border border-line bg-cream p-3 text-sm text-ink"
                         >
-                          <div className="mb-1 flex justify-between text-xs text-[#a8a29e]">
+                          <div className="mb-1 flex justify-between text-xs text-gray">
                             <span>{m.senderNickname || m.senderUsername || "시스템"}</span>
                             <span>{formatKoDate(m.createdAt)}</span>
                           </div>
@@ -331,7 +331,7 @@ export default function MessagesClient() {
                     </ul>
                   )}
                 </div>
-                <div className="border-t border-[#2a251c] p-3">
+                <div className="border-t border-line p-3">
                   <Button
                     type="button"
                     variant="red"
@@ -354,17 +354,17 @@ export default function MessagesClient() {
               onClick={() => setNoticeModal(null)}
             >
               <div
-                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-gold/40 bg-[#0a0a0a] shadow-2xl"
+                className="relative flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-gold/40 bg-panel shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex items-start justify-between gap-2 border-b border-[#2a251c] px-4 py-3">
+                <div className="flex items-start justify-between gap-2 border-b border-line px-4 py-3">
                   <div className="min-w-0">
-                    <h3 className="text-base font-bold text-[#f7e8a8]">{noticeModal.title}</h3>
-                    <p className="mt-1 text-xs text-[#9ca3af]">{formatKoDate(noticeModal.createdAt)}</p>
+                    <h3 className="text-base font-bold text-gold-deep">{noticeModal.title}</h3>
+                    <p className="mt-1 text-xs text-gray">{formatKoDate(noticeModal.createdAt)}</p>
                   </div>
                   <button
                     type="button"
-                    className="shrink-0 text-2xl leading-none text-gold/80 hover:text-white"
+                    className="shrink-0 text-2xl leading-none text-gold/80 hover:text-gold-deep"
                     aria-label="Close"
                     onClick={() => setNoticeModal(null)}
                   >
@@ -372,11 +372,11 @@ export default function MessagesClient() {
                   </button>
                 </div>
                 <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
-                  <div className="whitespace-pre-wrap text-sm leading-relaxed text-[#d6d3c9]">
+                  <div className="whitespace-pre-wrap text-sm leading-relaxed text-ink">
                     {noticeModal.message}
                   </div>
                 </div>
-                <div className="border-t border-[#2a251c] p-3">
+                <div className="border-t border-line p-3">
                   <Button type="button" variant="red" className="w-full" onClick={() => setNoticeModal(null)}>
                     닫기
                   </Button>
